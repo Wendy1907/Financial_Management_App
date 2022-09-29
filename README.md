@@ -24,7 +24,7 @@ manage my financial status well. For this program, I will only be focusing on de
 transactions record and showing the analysis of the total spending and earnings in finance 
 management.
 
-### User Stories:
+## User Stories:
 - As a user, I want to add and create new account (bank account, cash, credit card, loan)
 - As a user, I want to be able to delete my account.
 - As a user, I want to add the amount of money that I have paid/earned and the description 

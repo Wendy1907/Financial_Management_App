@@ -161,9 +161,8 @@ public class Account {
                 case Groceries:
                     this.groceriesList.add(s);
                     break;
-                case Others:
+                default:
                     this.othersSpendingList.add(s);
-                    break;
             }
         }
     }
@@ -181,11 +180,9 @@ public class Account {
                 case Interest:
                     this.interestList.add(e);
                     break;
-                case Others:
+                default:
                     this.othersEarningList.add(e);
-                    break;
             }
         }
     }
-
 }

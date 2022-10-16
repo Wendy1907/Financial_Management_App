@@ -22,9 +22,6 @@ public class AccountList {
         accountList = new ArrayList<>();
     }
 
-    public AccountList(AccountList accountList) {
-    }
-
     //getter
     public String getName() {
         return name;

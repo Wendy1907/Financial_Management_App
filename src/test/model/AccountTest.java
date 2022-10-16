@@ -271,19 +271,22 @@ public class AccountTest {
         Earning e2 = new Earning("Interest", 40.00, EarningCategories.Interest);
         Earning e3 = new Earning("Others Income", 100.00, EarningCategories.Others);
         Earning e4 = new Earning("Others", 500.00, EarningCategories.Others);
+        Earning e5 = new Earning("abcde", 10.00, EarningCategories.Others);
         testAccount.addEarning(e1);
         testAccount.addEarning(e2);
         testAccount.addEarning(e3);
         testAccount.addEarning(e4);
+        testAccount.addEarning(e5);
         testAccount.storeEarning();
 
         assertEquals(1, testAccount.getSalaryList().size());
         assertEquals(1, testAccount.getInterestList().size());
-        assertEquals(2, testAccount.getOthersEarningList().size());
+        assertEquals(3, testAccount.getOthersEarningList().size());
         assertEquals(e1, testAccount.getSalaryList().get(0));
         assertEquals(e2, testAccount.getInterestList().get(0));
         assertEquals(e3, testAccount.getOthersEarningList().get(0));
         assertEquals(e4, testAccount.getOthersEarningList().get(1));
+        assertEquals(e5, testAccount.getOthersEarningList().get(2));
     }
 
 

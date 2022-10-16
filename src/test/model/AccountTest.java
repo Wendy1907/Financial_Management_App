@@ -71,16 +71,25 @@ public class AccountTest {
         Spending s2 = new Spending("Bookstore", 40.00, SpendingCategories.Others);
         Spending s3 = new Spending("Food for new week", 120.00, SpendingCategories.Groceries);
         Spending s4 = new Spending("Bus Ticket", 4.00, SpendingCategories.Travel);
+        Spending s5 = new Spending("Ferry Ticket", 18.00, SpendingCategories.Travel);
+        Spending s6 = new Spending("Clothes", 210.00, SpendingCategories.Shopping);
+        Spending s7 = new Spending("Insurance", 75.00, SpendingCategories.Health);
         testAccount.addSpending(s1);
         testAccount.addSpending(s2);
         testAccount.addSpending(s3);
         testAccount.addSpending(s4);
+        testAccount.addSpending(s5);
+        testAccount.addSpending(s6);
+        testAccount.addSpending(s7);
         testAccount.removeSpending(s1);
         testAccount.removeSpending(s4);
+        testAccount.removeSpending(s5);
+        testAccount.removeSpending(s6);
 
-        assertEquals(2, testAccount.getSpendingList().size());
+        assertEquals(3, testAccount.getSpendingList().size());
         assertEquals(s2, testAccount.getSpendingList().get(0));
         assertEquals(s3, testAccount.getSpendingList().get(1));
+        assertEquals(s7, testAccount.getSpendingList().get(2));
     }
 
     @Test
@@ -97,12 +106,18 @@ public class AccountTest {
         Spending s2 = new Spending("Bookstore", 40.00, SpendingCategories.Others);
         Spending s3 = new Spending("Food for new week", 120.00, SpendingCategories.Groceries);
         Spending s4 = new Spending("Bus Ticket", 4.00, SpendingCategories.Travel);
+        Spending s5 = new Spending("Ferry Ticket", 18.00, SpendingCategories.Travel);
+        Spending s6 = new Spending("Clothes", 210.00, SpendingCategories.Shopping);
+        Spending s7 = new Spending("Insurance", 75.00, SpendingCategories.Health);
         testAccount.addSpending(s1);
         testAccount.addSpending(s2);
         testAccount.addSpending(s3);
         testAccount.addSpending(s4);
+        testAccount.addSpending(s5);
+        testAccount.addSpending(s6);
+        testAccount.addSpending(s7);
 
-        assertEquals((12.00 + 40.00 + 120.00 + 4.00), testAccount.calculateTotalSpendingAccount());
+        assertEquals((12.00 + 40.00 + 120.00 + 4.00 + 18.00 + 210.00 + 75.00), testAccount.calculateTotalSpendingAccount());
     }
 
     @Test
@@ -172,6 +187,17 @@ public class AccountTest {
     }
 
     @Test
+    void testStoreSpendingZeroSpending() {
+        testAccount.storeSpending();
+        assertEquals(0, testAccount.getDinningList().size());
+        assertEquals(0, testAccount.getShoppingList().size());
+        assertEquals(0, testAccount.getTravelList().size());
+        assertEquals(0, testAccount.getHealthList().size());
+        assertEquals(0, testAccount.getGroceriesList().size());
+        assertEquals(0, testAccount.getOthersSpendingList().size());
+    }
+
+    @Test
     void testStoreSpendingOneSpending() {
         Spending s = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
         testAccount.addSpending(s);
@@ -193,17 +219,21 @@ public class AccountTest {
         Spending s3 = new Spending("Food for new week", 120.00, SpendingCategories.Groceries);
         Spending s4 = new Spending("Bus Ticket", 4.00, SpendingCategories.Travel);
         Spending s5 = new Spending("Ferry Ticket", 18.00, SpendingCategories.Travel);
+        Spending s6 = new Spending("Clothes", 210.00, SpendingCategories.Shopping);
+        Spending s7 = new Spending("Insurance", 75.00, SpendingCategories.Health);
         testAccount.addSpending(s1);
         testAccount.addSpending(s2);
         testAccount.addSpending(s3);
         testAccount.addSpending(s4);
         testAccount.addSpending(s5);
+        testAccount.addSpending(s6);
+        testAccount.addSpending(s7);
         testAccount.storeSpending();
 
         assertEquals(1, testAccount.getDinningList().size());
-        assertEquals(0, testAccount.getShoppingList().size());
+        assertEquals(1, testAccount.getShoppingList().size());
         assertEquals(2, testAccount.getTravelList().size());
-        assertEquals(0, testAccount.getHealthList().size());
+        assertEquals(1, testAccount.getHealthList().size());
         assertEquals(1, testAccount.getGroceriesList().size());
         assertEquals(1, testAccount.getOthersSpendingList().size());
         assertEquals(s1, testAccount.getDinningList().get(0));
@@ -211,6 +241,16 @@ public class AccountTest {
         assertEquals(s3, testAccount.getGroceriesList().get(0));
         assertEquals(s4, testAccount.getTravelList().get(0));
         assertEquals(s5, testAccount.getTravelList().get(1));
+        assertEquals(s6, testAccount.getShoppingList().get(0));
+        assertEquals(s7, testAccount.getHealthList().get(0));
+    }
+
+    @Test
+    void testStoreEarningZeroEarning() {
+        testAccount.storeEarning();
+        assertEquals(0, testAccount.getSalaryList().size());
+        assertEquals(0, testAccount.getInterestList().size());
+        assertEquals(0, testAccount.getOthersEarningList().size());
     }
 
     @Test

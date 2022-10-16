@@ -5,21 +5,41 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test for AccountList
+ */
 public class AccountListTest {
     private AccountList testAccountList;
 
     @BeforeEach
     //Create an AccountList to apply for the test and run before every test
     void runBefore() {
-        testAccountList = new AccountList("Wendy", 0.0, 0.0);
+        testAccountList = new AccountList("AccountList");
     }
 
     @Test
     void testConstructor() {
-        assertEquals("Wendy", testAccountList.getNameOwner());
+        assertEquals("AccountList", testAccountList.getName());
         assertEquals(0.0, testAccountList.getTotalSpendingAllAccount());
         assertEquals(0.0, testAccountList.getTotalEarningAllAccount());
         assertEquals(0, testAccountList.getAccountList().size());
+    }
+
+    @Test
+    void testTotalAccount() {
+        assertEquals(0, testAccountList.totalAccount());
+    }
+
+    @Test
+    void testTotalAccountAddAccount() {
+        Account a1 = new Account("TD Account");
+        Account a2 = new Account("RBC Account");
+        Account a3 = new Account("Cash Deposit Account");
+        testAccountList.addAccount(a1);
+        testAccountList.addAccount(a2);
+        testAccountList.addAccount(a3);
+
+        assertEquals(3, testAccountList.totalAccount());
     }
 
     @Test

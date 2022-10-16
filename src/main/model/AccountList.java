@@ -3,22 +3,31 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is the AccountList class. In this class, it shows the name of the Owner (Tracker),
+ * show the list of all accounts that person has, and calculate the total amount of mooney that
+ * that person has spent and earned. We also can change the list of Account by adding or removing
+ * Account from the Account lists.
+ */
 public class AccountList {
-    private String nameOwner;
+    private String name;
     private double totalSpendingAllAccount;
     private double totalEarningAllAccount;
     private List<Account> accountList;
 
-    public AccountList(String nameOwner, double totalSpendingAllAccount, double totalEarningAllAccount) {
-        this.nameOwner = nameOwner;
+    public AccountList(String name) {
+        this.name = name;
         this.totalSpendingAllAccount = 0.0;
         this.totalEarningAllAccount = 0.0;
         accountList = new ArrayList<>();
     }
 
+    public AccountList(AccountList accountList) {
+    }
+
     //getter
-    public String getNameOwner() {
-        return nameOwner;
+    public String getName() {
+        return name;
     }
 
     public double getTotalSpendingAllAccount() {
@@ -45,6 +54,15 @@ public class AccountList {
     //EFFECTS: remove the given Account from the list
     public void removeAccount(Account account) {
         accountList.remove(account);
+    }
+
+    //EFFECTS: get total number of Account in the list
+    public int totalAccount() {
+        int count = 0;
+        for (Account a : accountList) {
+            count++;
+        }
+        return count;
     }
 
     //EFFECTS: get total amount of Spending

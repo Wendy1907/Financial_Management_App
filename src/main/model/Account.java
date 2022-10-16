@@ -3,6 +3,12 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This Account class store the name of account that we have, shows the total Spending amount, adn
+ * total Earning of this account, also show the List of Spending and Earning, and then categorize them
+ * into different categories. We also can change the list of Spending and Earning by adding or removing
+ * Spending/Earning transaction from these lists.
+ */
 public class Account {
     private String nameAccount;
     private double totalSpendingAccount;

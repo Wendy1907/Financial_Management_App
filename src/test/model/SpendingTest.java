@@ -3,8 +3,12 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.time.LocalDate;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+/**
+ * Test for Spending
+ */
 public class SpendingTest {
     private Spending testSpending;
 
@@ -20,5 +24,6 @@ public class SpendingTest {
         assertEquals("Sushi", testSpending.getName());
         assertEquals(12.00, testSpending.getAmount());
         assertEquals(SpendingCategories.Dinning, testSpending.getCategories());
+        assertEquals(LocalDate.now(), testSpending.getDate());
     }
 }

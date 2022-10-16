@@ -1,15 +1,17 @@
 package model;
 
+import java.time.LocalDate;
+
 /**
- * This is the Spending class. Spending class contains a name/ description, amount, category and
- * bought time for each spending transaction.
+ * This is the Spending class. Spending class contains a name (description for that Spending), amount, category and
+ * record the Date for each Spending transaction.
  */
 
 public class Spending {
     private String name;
     private double amount;
     private SpendingCategories categories;
-    //private LocalDate date;
+    private LocalDate date;
 
 
     //EFFECTS: create a spending that contain name, amount, categories and date.
@@ -17,7 +19,7 @@ public class Spending {
         this.name = name;
         this.amount = amount;
         this.categories = categories;
-        //this.date = getDate();
+        this.date = getDate();
     }
 
     //getter
@@ -33,9 +35,9 @@ public class Spending {
         return categories;
     }
 
-    //public LocalDate getDate() {
-        //return date;
-    //}
+    public LocalDate getDate() {
+        return LocalDate.now();
+    }
 
 
 

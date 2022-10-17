@@ -20,8 +20,6 @@ public class AccountListTest {
     @Test
     void testConstructor() {
         assertEquals("AccountList", testAccountList.getName());
-        assertEquals(0.0, testAccountList.getTotalSpendingAllAccount());
-        assertEquals(0.0, testAccountList.getTotalEarningAllAccount());
         assertEquals(0, testAccountList.getAccountList().size());
     }
 

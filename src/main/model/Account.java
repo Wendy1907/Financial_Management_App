@@ -11,8 +11,6 @@ import java.util.List;
  */
 public class Account {
     private String nameAccount;
-    private double totalSpendingAccount;
-    private double totalEarningAccount;
     private List<Spending> spendingList;
     private List<Spending> dinningList;
     private List<Spending> shoppingList;
@@ -27,8 +25,6 @@ public class Account {
 
     public Account(String nameAccount) {
         this.nameAccount = nameAccount;
-        this.totalSpendingAccount = 0.0;
-        this.totalEarningAccount = 0.0;
         spendingList = new ArrayList<>();
         dinningList = new ArrayList<>();
         shoppingList = new ArrayList<>();
@@ -47,14 +43,6 @@ public class Account {
 
     public String getNameAccount() {
         return nameAccount;
-    }
-
-    public double getTotalSpendingAccount() {
-        return totalSpendingAccount;
-    }
-
-    public double getTotalEarningAccount() {
-        return totalEarningAccount;
     }
 
     public List<Spending> getSpendingList() {
@@ -117,10 +105,11 @@ public class Account {
 
     //EFFECTS: get total amount of Spending
     public double calculateTotalSpendingAccount() {
-        for (Spending e : spendingList) {
-            totalSpendingAccount += e.getAmount();
+        double amountSpendingAccount = 0.0;
+        for (Spending s : spendingList) {
+            amountSpendingAccount += s.getAmount();
         }
-        return totalSpendingAccount;
+        return amountSpendingAccount;
     }
 
     //REQUIRES: earning != null
@@ -139,10 +128,11 @@ public class Account {
 
     //EFFECTS: get total amount of Earning
     public double calculateTotalEarningAccount() {
+        double amountEarningAccount = 0.0;
         for (Earning e : earningList) {
-            totalEarningAccount += e.getAmount();
+            amountEarningAccount += e.getAmount();
         }
-        return totalEarningAccount;
+        return amountEarningAccount;
     }
 
     //REQUIRES: s != null

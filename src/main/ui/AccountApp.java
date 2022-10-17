@@ -114,7 +114,7 @@ public class AccountApp {
     // EFFECTS: categorize Spending
     public SpendingCategories categorizeSpending(String category) {
         switch (category) {
-            case "ds":
+            case "dis":
                 return SpendingCategories.Dinning;
             case "ss":
                 return SpendingCategories.Shopping;
@@ -148,7 +148,7 @@ public class AccountApp {
 
     //EFFECTS: get the total Spending amount in one Account
     public void doCalculateSpendingTotalAccount() {
-        System.out.println("Total Spending is :" + account.calculateTotalSpendingAccount());
+        System.out.println(">>> Total Spending is : " + account.calculateTotalSpendingAccount());
     }
 
     // MODIFIES: this
@@ -230,7 +230,7 @@ public class AccountApp {
 
     //EFFECTS: get the total Earning amount in one Account
     public void doCalculateEarningTotalAccount() {
-        System.out.println("Total Earning is: " + account.calculateTotalEarningAccount());
+        System.out.println(">>> Total Earning is: " + account.calculateTotalEarningAccount());
     }
 
     // MODIFIES: this

@@ -21,8 +21,6 @@ public class AccountTest {
     //Test for the constructor of the given example
     void testConstructor() {
         assertEquals("TD Account", testAccount.getNameAccount());
-        assertEquals(0, testAccount.getTotalSpendingAccount());
-        assertEquals(0, testAccount.getTotalEarningAccount());
         assertEquals(0, testAccount.getSpendingList().size());
         assertEquals(0, testAccount.getEarningList().size());
         assertEquals(0, testAccount.getDinningList().size());

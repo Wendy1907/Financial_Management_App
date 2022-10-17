@@ -11,28 +11,16 @@ import java.util.List;
  */
 public class AccountList {
     private String name;
-    private double totalSpendingAllAccount;
-    private double totalEarningAllAccount;
     private List<Account> accountList;
 
     public AccountList(String name) {
         this.name = name;
-        this.totalSpendingAllAccount = 0.0;
-        this.totalEarningAllAccount = 0.0;
         accountList = new ArrayList<>();
     }
 
     //getter
     public String getName() {
         return name;
-    }
-
-    public double getTotalSpendingAllAccount() {
-        return totalSpendingAllAccount;
-    }
-
-    public double getTotalEarningAllAccount() {
-        return totalEarningAllAccount;
     }
 
     public List<Account> getAccountList() {
@@ -64,16 +52,18 @@ public class AccountList {
 
     //EFFECTS: get total amount of Spending
     public double calculateTotalSpendingAllAccount() {
+        double totalSpendingAllAccount = 0.0;
         for (Account a : accountList) {
-            totalSpendingAllAccount += a.getTotalSpendingAccount();
+            totalSpendingAllAccount += a.calculateTotalSpendingAccount();
         }
         return totalSpendingAllAccount;
     }
 
     //EFFECTS: get total amount of Spending
     public double calculateTotalEarningAllAccount() {
+        double totalEarningAllAccount = 0.0;
         for (Account a : accountList) {
-            totalEarningAllAccount += a.getTotalEarningAccount();
+            totalEarningAllAccount += a.calculateTotalEarningAccount();
         }
         return totalEarningAllAccount;
     }

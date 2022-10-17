@@ -122,7 +122,7 @@ public class AccountListApp {
         }
     }
 
-
+    //EFFECTS: get into the account that has been selected
     private void getIntoAccount() {
         Scanner item = new Scanner(System.in);
         System.out.println(">>> What's the Account's name that you want to get into?");

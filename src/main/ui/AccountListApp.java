@@ -146,25 +146,24 @@ public class AccountListApp {
         String name = input.nextLine();
 
         Account a = new Account(name);
-        accountList.addAccount(a);
+        this.accountList.addAccount(a);
         System.out.println(">>> You have successfully added " + name + " to your Account list");
     }
 
 
     //MODIFIES: this
-    //EFFECTS: delete Account from AccountList
+    //EFFECTS: delete Account from AccountList and do nothing if that Account is not in the AccountList
     public void doDeleteAccount() {
         Scanner item = new Scanner(System.in);
         System.out.println(">>> What's the account's name that you want to delete?");
         String name = item.nextLine();
 
-        for (Account a : accountList.getAccountList()) {
+        for (Account a : this.accountList.getAccountList()) {
             if (a.getNameAccount().equals(name)) {
-                accountList.removeAccount(a);
+                this.accountList.removeAccount(a);
                 System.out.println(name + " is gone now!");
                 break;
             }
-            System.out.println("Oops... You don't have this account! No need to delete.");
         }
     }
 

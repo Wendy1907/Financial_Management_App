@@ -107,7 +107,7 @@ public class AccountApp {
 
         SpendingCategories type = categorizeSpending(category);
         Spending s = new Spending(name, amount, type);
-        account.addSpending(s);
+        this.account.addSpending(s);
         System.out.println(">>> You have successfully added the Spending " + name + " to your Account.");
     }
 
@@ -130,19 +130,18 @@ public class AccountApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: delete Spending from Account
+    // EFFECTS: delete Spending from Account and do nothing if that Spending is not in the Account.
     public void doDeleteSpending() {
         Scanner item = new Scanner(System.in);
         System.out.println(">>> What's the Spending's description that you want to delete?");
         String name = item.nextLine();
 
-        for (Spending s : account.getSpendingList()) {
+        for (Spending s : this.account.getSpendingList()) {
             if (s.getName().equals(name)) {
-                account.removeSpending(s);
+                this.account.removeSpending(s);
                 System.out.println(name + " is gone now!");
                 break;
             }
-            System.out.println("Oops... You don't have this Spending in your Account! No need to delete");
         }
     }
 
@@ -195,7 +194,7 @@ public class AccountApp {
 
         EarningCategories type = categorizeEarning(category);
         Earning e = new Earning(name, amount, type);
-        account.addEarning(e);
+        this.account.addEarning(e);
         System.out.println(">>> You have successfully added the Earning " + name + " to your Account.");
     }
 
@@ -212,19 +211,18 @@ public class AccountApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: delete Earning from Account
+    // EFFECTS: delete Earning from Account and do nothing if that Earning is not in the Account
     public void doDeleteEarning() {
         Scanner item = new Scanner(System.in);
         System.out.println(">>> What's the Earning's description that you want to delete?");
         String name = item.nextLine();
 
-        for (Earning e : account.getEarningList()) {
+        for (Earning e : this.account.getEarningList()) {
             if (e.getName().equals(name)) {
-                account.removeEarning(e);
+                this.account.removeEarning(e);
                 System.out.println(name + " is gone now!");
                 break;
             }
-            System.out.println("Oops... You don't have this Earning in your Account! No need to delete");
         }
     }
 

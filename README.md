@@ -25,17 +25,17 @@ transactions record and showing the analysis of the total spending and earnings 
 management.
 
 ## User Stories:
-- As a user, I want to add and create new account (bank account, cash, credit card, loan)
-- As a user, I want to be able to delete my account.
-- As a user, I want to add the amount of money that I have paid/earned and the description 
-for that transaction.
-- As a user, I want to record the date and time for that transaction.
-- As a user, I want to be able to categorize the transaction into different type/ purpose 
-categories and identify the account that I have used for that transaction.
-- As a user, I want to delete that transaction that I have recorded.
-- As a user, I want to check the balance of the account.
-- As a user, I want to track the total amount of money and the transaction records that 
-I have spent and earned in each day/ week/ month.
-
+- As a user, I want to add and remove an account from my account list.
+- As a user, I want to view the sum of all Spending and Earning amount from all of your accounts in your account list.
+- As a user, I want to view detailed in one selected the account in the account list, with the name of
+that account, the total Spending and Earning amount in that specific account.
+- As a user, I want to add Spending track into one of my Account, that Spending track have the name/description for that 
+Spending, the amount of money that I have spent on it, store that Spending into specific Spending categories, and also 
+show the date time for that Spending.
+- As a user, I want to remove the Spending track from my Account.
+- As a user, I want to add Earning track into my Account, that Earning track shows the name/description foe that Earning,
+the amount of money that I have earned, store Earning into specific categories, and record the date time for that 
+Earning.
+- - As a user, I want to remove the Earning track from my Account.
 
 

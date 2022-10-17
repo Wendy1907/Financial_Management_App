@@ -50,7 +50,7 @@ public class MainPage {
 
     // EFFECTS: displays menu of options to user
     private void displayMenu() {
-        System.out.println("\n\n=======Welcome to your personal spending and earning tracker=======");
+        System.out.println("\n\n=======Welcome to your personal Spending and Earning tracker=======");
         System.out.println("-----------------------Shop smart, spend wise-----------------------");
         System.out.println("\nYou can :");
         System.out.println("\ta -> My account list");

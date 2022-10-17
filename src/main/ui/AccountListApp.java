@@ -71,11 +71,11 @@ public class AccountListApp {
     // EFFECTS: displays menu of options in the AccountList page to user
     private void displayMenu() {
         int totalAccount = accountList.totalAccount();
-        System.out.println("\n----------Welcome Home!----------");
+        System.out.println("\n----------Welcome to AccountList!----------");
         System.out.println("You have " + totalAccount + " accounts at your account list now!");
         System.out.println("\nDo you want to:");
         System.out.println("\tv -> VIEW Accounts that you have");
-        System.out.println("\tva -> Get in details of One Account");
+        System.out.println("\tva -> Get in details of Selected Account");
         System.out.println("\ta -> ADD a NEW Account to your account list");
         System.out.println("\td -> DELETE Account from your account list");
         System.out.println("\ts -> get TOTAL of Spending in all of your accounts");
@@ -108,6 +108,7 @@ public class AccountListApp {
         }
     }
 
+    //EFFECTS: show the details of Selected Account
     private void goIntoSpecificAccount() {
         init();
         while (true) {
@@ -148,6 +149,7 @@ public class AccountListApp {
         System.out.println(">>> You have successfully added " + name + " to your Account list");
     }
 
+
     //MODIFIES: this
     //EFFECTS: delete Account from AccountList
     public void doDeleteAccount() {
@@ -161,9 +163,11 @@ public class AccountListApp {
                 System.out.println(name + " is gone now!");
                 break;
             }
-            System.out.println("Oops... You don't have this account! No need to delete :)");
+            System.out.println("Oops... You don't have this account! No need to delete.");
         }
     }
+
+
 
     //EFFECTS: get the total Spending amount in all Account in AccountList
     public void doCalculateSpendingTotal() {

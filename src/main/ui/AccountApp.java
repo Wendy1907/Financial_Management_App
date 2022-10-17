@@ -67,16 +67,20 @@ public class AccountApp {
     // EFFECTS: displays menu of options of Account page to user
     private void displayMenu() {
         String name = account.getNameAccount();
-        System.out.println("\n----------Welcome to" + name + "!----------");
+        int totalSpending = account.getSpendingList().size();
+        int totalEarning = account.getEarningList().size();
+        System.out.println("\n----------Welcome to " + name + " Account!----------");
+        System.out.println("You have " + totalSpending + " Spending at your Account now!");
+        System.out.println("You have " + totalEarning + " Earning at your Account now!");
         System.out.println("\nDo you want to:");
         System.out.println("\tas -> ADD a NEW Spending to your Account");
         System.out.println("\tds -> DELETE Spending from your Account");
         System.out.println("\ts -> get TOTAL of Spending value in your Account");
-        System.out.println("\tvs -> VIEW Spending that you have in your Account");
+        System.out.println("\tvs -> VIEW the list of Spending that you have in your Account");
         System.out.println("\tae -> ADD a NEW Earning to your Account");
         System.out.println("\tde -> DELETE Earning from your Account");
         System.out.println("\te -> get TOTAL of Earning value in your Account");
-        System.out.println("\tve -> VIEW Earning that you have in your Account");
+        System.out.println("\tve -> VIEW the list of Earning that you have in your Account");
         System.out.println("\tq -> BACK to AccountList page");
     }
 
@@ -138,7 +142,7 @@ public class AccountApp {
                 System.out.println(name + " is gone now!");
                 break;
             }
-            System.out.println("Oops... You don't have this Spending in your Account! No need to delete :)");
+            System.out.println("Oops... You don't have this Spending in your Account! No need to delete");
         }
     }
 
@@ -148,7 +152,7 @@ public class AccountApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: processes user input for v (view) spending
+    // EFFECTS: processes user input for v (view) Spending
     public void runViewSpending() {
         init();
         while (true) {
@@ -220,7 +224,7 @@ public class AccountApp {
                 System.out.println(name + " is gone now!");
                 break;
             }
-            System.out.println("Oops... You don't have this Earning in your Account! No need to delete :)");
+            System.out.println("Oops... You don't have this Earning in your Account! No need to delete");
         }
     }
 
@@ -230,7 +234,7 @@ public class AccountApp {
     }
 
     // MODIFIES: this
-    // EFFECTS: processes user input for v (view) earning
+    // EFFECTS: processes user input for v (view) Earning
     public void runViewEarning() {
         init();
         while (true) {

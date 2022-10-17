@@ -36,6 +36,6 @@ show the date time for that Spending.
 - As a user, I want to add Earning track into my Account, that Earning track shows the name/description foe that Earning,
 the amount of money that I have earned, store Earning into specific categories, and record the date time for that 
 Earning.
-- - As a user, I want to remove the Earning track from my Account.
+- As a user, I want to remove the Earning track from my Account.
 
 

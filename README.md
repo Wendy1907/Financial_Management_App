@@ -29,11 +29,11 @@ management.
 - As a user, I want to view the sum of all Spending and Earning amount from all of your accounts in your account list.
 - As a user, I want to view detailed in one selected the account in the account list, with the name of
 that account, the total Spending and Earning amount in that specific account.
-- As a user, I want to add multiple Spending tracks into one of my Account, that Spending track have the name/description for that 
+- As a user, I want to add multiple Spending tracks into one of my Account, that each Spending track have the name/description for that 
 Spending, the amount of money that I have spent on it, store that Spending into specific Spending categories, and also 
 show the date time for that Spending.
 - As a user, I want to remove the selected Spending track from my Account.
-- As a user, I want to add multiples Earning tracks into my Account, that Earning track shows the name/description foe that Earning,
+- As a user, I want to add multiples Earning tracks into my Account, that each Earning track shows the name/description foe that Earning,
 the amount of money that I have earned, store Earning into specific categories, and record the date time for that 
 Earning.
 - As a user, I want to remove the selected Earning track from my Account.

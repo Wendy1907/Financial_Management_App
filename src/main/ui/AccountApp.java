@@ -96,7 +96,7 @@ public class AccountApp {
 
         System.out.println("In which categories do you want to store the " + name + "?");
         System.out.println("\nSelect from:");
-        System.out.println("\tds -> Dinning");
+        System.out.println("\tdis -> Dinning");
         System.out.println("\tss -> Shopping");
         System.out.println("\tts -> Travel");
         System.out.println("\ths -> Health");

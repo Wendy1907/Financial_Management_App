@@ -17,7 +17,7 @@ public class JsonAccountReaderTest {
 
     @Test
     void testReaderNonExistentFile() {
-        JsonAccountReader accountReader = new JsonAccountReader("./data/noSuchFile.json");
+        JsonAccountReader accountReader = new JsonAccountReader(".data/noSuchFile.json");
         try {
             AccountList accountList = accountReader.read();
             fail("IOException expected");
@@ -28,7 +28,7 @@ public class JsonAccountReaderTest {
 
     @Test
     void testAccountReaderEmptyAccountList() {
-        JsonAccountReader accountReader = new JsonAccountReader("./data/testAccountReaderEmptyAccountList.json");
+        JsonAccountReader accountReader = new JsonAccountReader(".data/testAccountReaderEmptyAccountList.json");
         try {
             AccountList accountList = accountReader.read();
             assertEquals("My account list", accountList.getName());
@@ -40,7 +40,7 @@ public class JsonAccountReaderTest {
 
     @Test
     void testAccountReaderGeneralAccountList() {
-        JsonAccountReader accountReader = new JsonAccountReader("./data/testAccountReaderGeneralAccountList.json");
+        JsonAccountReader accountReader = new JsonAccountReader(".data/testAccountReaderGeneralAccountList.json");
         try {
             AccountList accountList = accountReader.read();
             assertEquals("My account list", accountList.getName());

@@ -1,14 +1,14 @@
 package persistence;
 
+import model.AccountList;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
-// This JsonWriter references code from this repo
-// Link: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
-
 public class JsonWriter {
-    static final int TAB = 4;
+    private static final int TAB = 4;
     private PrintWriter writer;
     private String destination;
 
@@ -25,6 +25,13 @@ public class JsonWriter {
     }
 
     // MODIFIES: this
+    // EFFECTS: writes JSON representation of workroom to file
+    public void write(AccountList accountList) {
+        JSONObject json = accountList.toJson();
+        saveToFile(json.toString(TAB));
+    }
+
+    // MODIFIES: this
     // EFFECTS: closes writer
     public void close() {
         writer.close();
@@ -32,7 +39,7 @@ public class JsonWriter {
 
     // MODIFIES: this
     // EFFECTS: writes string to file
-    public void saveToFile(String json) {
+    private void saveToFile(String json) {
         writer.print(json);
     }
 }

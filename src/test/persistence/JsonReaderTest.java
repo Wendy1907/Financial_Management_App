@@ -10,14 +10,14 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class JsonAccountReaderTest {
+public class JsonReaderTest {
     protected void checkAccount(String name, Account account) {
         assertEquals(name, account.getNameAccount());
     }
 
     @Test
     void testReaderNonExistentFile() {
-        JsonAccountReader accountReader = new JsonAccountReader(".data/noSuchFile.json");
+        JsonReader accountReader = new JsonReader(".data/noSuchFile.json");
         try {
             AccountList accountList = accountReader.read();
             fail("IOException expected");
@@ -27,10 +27,10 @@ public class JsonAccountReaderTest {
     }
 
     @Test
-    void testAccountReaderEmptyAccountList() {
-        JsonAccountReader accountReader = new JsonAccountReader(".data/testAccountReaderEmptyAccountList.json");
+    void testReaderEmptyAccountList() {
+        JsonReader reader = new JsonReader("./data/testReaderEmptyAccountList.json");
         try {
-            AccountList accountList = accountReader.read();
+            AccountList accountList = reader.read();
             assertEquals("My account list", accountList.getName());
             assertEquals(0, accountList.getAccountList().size());
         } catch (IOException e) {
@@ -40,9 +40,9 @@ public class JsonAccountReaderTest {
 
     @Test
     void testAccountReaderGeneralAccountList() {
-        JsonAccountReader accountReader = new JsonAccountReader(".data/testAccountReaderGeneralAccountList.json");
+        JsonReader reader = new JsonReader("./data/testReaderGeneralAccountList.json");
         try {
-            AccountList accountList = accountReader.read();
+            AccountList accountList = reader.read();
             assertEquals("My account list", accountList.getName());
             List<Account> accounts = accountList.getAccountList();
             assertEquals(2, accounts.size());
@@ -52,5 +52,4 @@ public class JsonAccountReaderTest {
             fail("Couldn't read from file");
         }
     }
-
 }

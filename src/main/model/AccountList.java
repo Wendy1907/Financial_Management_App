@@ -75,17 +75,16 @@ public class AccountList implements Writable {
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
-        json.put("name", name);
+        json.put("nameAccountList", name);
         json.put("accounts", accountsToJson());
         return json;
     }
 
-    //EFFECTS: returns Account in this AccountList as a JSONArray
     private JSONArray accountsToJson() {
         JSONArray jsonArray = new JSONArray();
 
-        for (Account account : accountList) {
-            jsonArray.put(account.toJson());
+        for (Account a : accountList) {
+            jsonArray.put(a.toJson());
         }
 
         return jsonArray;

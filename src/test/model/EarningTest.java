@@ -6,15 +6,13 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-/**
- * Test for Earning
- */
+
 public class EarningTest {
     private Earning testEarning;
 
     @BeforeEach
-    //Create an Earning to apply into the test and run before
-    //every single test.
+        //Create an Earning to apply into the test and run before
+        //every single test.
     void runBefore() {
         testEarning = new Earning("Salary", 1000.00, EarningCategories.Salary);
     }

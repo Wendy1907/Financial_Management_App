@@ -1,0 +1,8 @@
+{
+    "nameAccountList": "AccountList",
+    "accounts": [
+        {"nameAccount": "1"},
+        {"nameAccount": "2"},
+        {"nameAccount": "3"}
+    ]
+}

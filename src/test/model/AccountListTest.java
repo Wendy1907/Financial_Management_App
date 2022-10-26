@@ -5,14 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Test for AccountList
- */
 public class AccountListTest {
     private AccountList testAccountList;
 
     @BeforeEach
-    //Create an AccountList to apply for the test and run before every test
+        //Create an AccountList to apply for the test and run before every test
     void runBefore() {
         testAccountList = new AccountList("AccountList");
     }

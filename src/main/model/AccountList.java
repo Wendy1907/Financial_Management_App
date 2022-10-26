@@ -1,5 +1,9 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +13,7 @@ import java.util.List;
  * that person has spent and earned. We also can change the list of Account by adding or removing
  * Account from the Account lists.
  */
-public class AccountList {
+public class AccountList implements Writable {
     private String name;
     private List<Account> accountList;
 
@@ -66,5 +70,24 @@ public class AccountList {
             totalEarningAllAccount += a.calculateTotalEarningAccount();
         }
         return totalEarningAllAccount;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("accounts", accountsToJson());
+        return json;
+    }
+
+    //EFFECTS: returns Account in this AccountList as a JSONArray
+    private JSONArray accountsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Account account : accountList) {
+            jsonArray.put(account.toJson());
+        }
+
+        return jsonArray;
     }
 }

@@ -37,5 +37,7 @@ show the date time for that Spending.
 the amount of money that I have earned, store Earning into specific categories, and record the date time for that 
 Earning.
 - As a user, I want to remove the selected Earning track from my Account.
-
+- As a user, when I select the quit option from the application menu, I want to be reminded to save my 
+financial data to file and have the option to do so or not.
+- As a user, I want to be able to be able to load my financial data from file that I have saved before.
 

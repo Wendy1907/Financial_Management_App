@@ -107,7 +107,7 @@ public class AccountApp {
 
         SpendingCategories type = categorizeSpending(category);
         Spending s = new Spending(name, amount, type);
-        this.account.addSpending(s);
+        this.account.addEarning(s);
         System.out.println(">>> You have successfully added the Spending " + name + " to your Account.");
     }
 

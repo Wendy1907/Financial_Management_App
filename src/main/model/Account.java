@@ -1,5 +1,9 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +13,7 @@ import java.util.List;
  * into different categories. We also can change the list of Spending and Earning by adding or removing
  * Spending/Earning transaction from these lists.
  */
-public class Account {
+public class Account implements Writable {
     private String nameAccount;
     private List<Spending> spendingList;
     private List<Spending> dinningList;
@@ -92,7 +96,7 @@ public class Account {
     //REQUIRES: spending != null
     //MODIFIES: this
     //EFFECTS: stores the given Spending into the list
-    public void addSpending(Spending spending) {
+    public void addEarning(Spending spending) {
         spendingList.add(spending);
     }
 
@@ -180,5 +184,34 @@ public class Account {
                     this.othersEarningList.add(e);
             }
         }
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", nameAccount);
+        json.put("spendingList", spendingToJson());
+        json.put("earningList", earningToJson());
+        return json;
+    }
+
+    public JSONArray spendingToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Spending spending : spendingList) {
+            jsonArray.put(spending.toJson());
+        }
+
+        return jsonArray;
+    }
+
+    public JSONArray earningToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Earning earning : earningList) {
+            jsonArray.put(earning.toJson());
+        }
+
+        return jsonArray;
     }
 }

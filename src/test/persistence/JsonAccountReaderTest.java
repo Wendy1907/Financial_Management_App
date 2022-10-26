@@ -10,14 +10,14 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class JsonReaderTest {
+public class JsonAccountReaderTest {
     protected void checkAccount(String name, Account account) {
         assertEquals(name, account.getNameAccount());
     }
 
     @Test
     void testReaderNonExistentFile() {
-        JsonReader accountReader = new JsonReader(".data/noSuchFile.json");
+        JsonAccountReader accountReader = new JsonAccountReader("./data/noSuchFile.json");
         try {
             AccountList accountList = accountReader.read();
             fail("IOException expected");
@@ -27,10 +27,10 @@ public class JsonReaderTest {
     }
 
     @Test
-    void testReaderEmptyAccountList() {
-        JsonReader reader = new JsonReader("./data/testReaderEmptyAccountList.json");
+    void testAccountReaderEmptyAccountList() {
+        JsonAccountReader accountReader = new JsonAccountReader("./data/testAccountReaderEmptyAccountList.json");
         try {
-            AccountList accountList = reader.read();
+            AccountList accountList = accountReader.read();
             assertEquals("My account list", accountList.getName());
             assertEquals(0, accountList.getAccountList().size());
         } catch (IOException e) {
@@ -40,9 +40,9 @@ public class JsonReaderTest {
 
     @Test
     void testAccountReaderGeneralAccountList() {
-        JsonReader reader = new JsonReader("./data/testReaderGeneralAccountList.json");
+        JsonAccountReader accountReader = new JsonAccountReader("./data/testAccountReaderGeneralAccountList.json");
         try {
-            AccountList accountList = reader.read();
+            AccountList accountList = accountReader.read();
             assertEquals("My account list", accountList.getName());
             List<Account> accounts = accountList.getAccountList();
             assertEquals(2, accounts.size());
@@ -52,4 +52,5 @@ public class JsonReaderTest {
             fail("Couldn't read from file");
         }
     }
+
 }

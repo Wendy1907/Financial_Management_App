@@ -1,0 +1,15 @@
+{
+    "nameAccountList": "My account list",
+    "accounts": [
+        {
+            "earningList": [],
+            "spendingList": [],
+            "nameAccount": "account1"
+        },
+        {
+            "earningList": [],
+            "spendingList": [],
+            "nameAccount": "account2"
+        }
+    ]
+}

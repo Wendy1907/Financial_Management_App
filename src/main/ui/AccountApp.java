@@ -8,6 +8,8 @@ import java.util.Scanner;
  * This is the Account page of the Financial Tracker.
  */
 public class AccountApp {
+    private static final String JSON_STORE_SPENDING = "./data/Spending.json";
+    private static final String JSON_STORE_EARNING = "./data/Earning.json";
     protected Account account;
     private Scanner input;
 
@@ -81,6 +83,7 @@ public class AccountApp {
         System.out.println("\tde -> DELETE Earning from your Account");
         System.out.println("\te -> get TOTAL of Earning value in your Account");
         System.out.println("\tve -> VIEW the list of Earning that you have in your Account");
+        System.out.println("\tsa -> SAVE information of the account");
         System.out.println("\tq -> BACK to AccountList page");
     }
 
@@ -107,7 +110,7 @@ public class AccountApp {
 
         SpendingCategories type = categorizeSpending(category);
         Spending s = new Spending(name, amount, type);
-        this.account.addEarning(s);
+        this.account.addSpending(s);
         System.out.println(">>> You have successfully added the Spending " + name + " to your Account.");
     }
 

@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.time.LocalDate;
 
 /**
@@ -7,7 +10,7 @@ import java.time.LocalDate;
  * record the Date for each Spending transaction.
  */
 
-public class Spending {
+public class Spending implements Writable {
     private String name;
     private double amount;
     private SpendingCategories categories;
@@ -37,6 +40,15 @@ public class Spending {
 
     public LocalDate getDate() {
         return LocalDate.now();
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("amount", amount);
+        json.put("categories", categories);
+        return json;
     }
 
 }

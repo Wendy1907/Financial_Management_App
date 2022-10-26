@@ -1,14 +1,11 @@
 package persistence;
 
-import model.AccountList;
-import org.json.JSONObject;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class JsonWriter {
-    private static final int TAB = 4;
+    static final int TAB = 4;
     private PrintWriter writer;
     private String destination;
 
@@ -25,13 +22,6 @@ public class JsonWriter {
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of workroom to file
-    public void write(AccountList accountList) {
-        JSONObject json = accountList.toJson();
-        saveToFile(json.toString(TAB));
-    }
-
-    // MODIFIES: this
     // EFFECTS: closes writer
     public void close() {
         writer.close();
@@ -39,7 +29,7 @@ public class JsonWriter {
 
     // MODIFIES: this
     // EFFECTS: writes string to file
-    private void saveToFile(String json) {
+    public void saveToFile(String json) {
         writer.print(json);
     }
 }

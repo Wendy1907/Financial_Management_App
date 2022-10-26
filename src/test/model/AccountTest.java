@@ -6,122 +6,284 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AccountTest {
-    private AccountList testAccountList;
+    private Account testAccount;
 
     @BeforeEach
-        //Create an AccountList to apply for the test and run before every test
+        //Create an Account to apply into the test and this run before
+        //every single test.
     void runBefore() {
-        testAccountList = new AccountList("AccountList");
+        testAccount = new Account("TD Account");
     }
 
     @Test
+        //Test for the constructor of the given example
     void testConstructor() {
-        assertEquals("AccountList", testAccountList.getName());
-        assertEquals(0, testAccountList.getAccountList().size());
+        assertEquals("TD Account", testAccount.getNameAccount());
+        assertEquals(0, testAccount.getSpendingList().size());
+        assertEquals(0, testAccount.getEarningList().size());
+        assertEquals(0, testAccount.getDinningList().size());
+        assertEquals(0, testAccount.getShoppingList().size());
+        assertEquals(0, testAccount.getTravelList().size());
+        assertEquals(0, testAccount.getGroceriesList().size());
+        assertEquals(0, testAccount.getHealthList().size());
+        assertEquals(0, testAccount.getOthersSpendingList().size());
+        assertEquals(0, testAccount.getSalaryList().size());
+        assertEquals(0, testAccount.getInterestList().size());
+        assertEquals(0, testAccount.getOthersEarningList().size());
     }
 
     @Test
-    void testTotalAccount() {
-        assertEquals(0, testAccountList.totalAccount());
+        //Test for the adding Spending into the SpendingList
+    void testAddSpendingOneTime() {
+        Spending s = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
+        testAccount.addSpending(s);
+
+        assertEquals(1, testAccount.getSpendingList().size());
+        assertEquals(s, testAccount.getSpendingList().get(0));
     }
 
     @Test
-    void testTotalAccountAddAccount() {
-        Account a1 = new Account("TD Account");
-        Account a2 = new Account("RBC Account");
-        Account a3 = new Account("Cash Deposit Account");
-        testAccountList.addAccount(a1);
-        testAccountList.addAccount(a2);
-        testAccountList.addAccount(a3);
+    void testAddSpendingMultipleTimes() {
+        Spending s1 = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
+        Spending s2 = new Spending("Bookstore", 40.00, SpendingCategories.Others);
+        testAccount.addSpending(s1);
+        testAccount.addSpending(s2);
 
-        assertEquals(3, testAccountList.totalAccount());
+        assertEquals(2, testAccount.getSpendingList().size());
+        assertEquals(s1, testAccount.getSpendingList().get(0));
+        assertEquals(s2, testAccount.getSpendingList().get(1));
     }
 
     @Test
-    void testAddOneAccount() {
-        Account a = new Account("TD Account");
-        testAccountList.addAccount(a);
+    void testRemoveSpendingOneTime() {
+        Spending s = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
+        testAccount.addSpending(s);
+        testAccount.removeSpending(s);
 
-        assertEquals(1, testAccountList.getAccountList().size());
-        assertEquals(a, testAccountList.getAccountList().get(0));
+        assertEquals(0, testAccount.getSpendingList().size());
     }
 
     @Test
-    void testAddMultipleAccounts() {
-        Account a1 = new Account("TD Account");
-        Account a2 = new Account("RBC Account");
-        Account a3 = new Account("Cash Deposit Account");
-        testAccountList.addAccount(a1);
-        testAccountList.addAccount(a2);
-        testAccountList.addAccount(a3);
+    void testRemoveSpendingMultipleTimes() {
+        Spending s1 = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
+        Spending s2 = new Spending("Bookstore", 40.00, SpendingCategories.Others);
+        Spending s3 = new Spending("Food for new week", 120.00, SpendingCategories.Groceries);
+        Spending s4 = new Spending("Bus Ticket", 4.00, SpendingCategories.Travel);
+        Spending s5 = new Spending("Ferry Ticket", 18.00, SpendingCategories.Travel);
+        Spending s6 = new Spending("Clothes", 210.00, SpendingCategories.Shopping);
+        Spending s7 = new Spending("Insurance", 75.00, SpendingCategories.Health);
+        testAccount.addSpending(s1);
+        testAccount.addSpending(s2);
+        testAccount.addSpending(s3);
+        testAccount.addSpending(s4);
+        testAccount.addSpending(s5);
+        testAccount.addSpending(s6);
+        testAccount.addSpending(s7);
+        testAccount.removeSpending(s1);
+        testAccount.removeSpending(s4);
+        testAccount.removeSpending(s5);
+        testAccount.removeSpending(s6);
 
-        assertEquals(3, testAccountList.getAccountList().size());
-        assertEquals(a1, testAccountList.getAccountList().get(0));
-        assertEquals(a2, testAccountList.getAccountList().get(1));
-        assertEquals(a3, testAccountList.getAccountList().get(2));
+        assertEquals(3, testAccount.getSpendingList().size());
+        assertEquals(s2, testAccount.getSpendingList().get(0));
+        assertEquals(s3, testAccount.getSpendingList().get(1));
+        assertEquals(s7, testAccount.getSpendingList().get(2));
     }
 
     @Test
-    void testRemoveOneAccount() {
-        Account a = new Account("TD Account");
-        testAccountList.addAccount(a);
-        testAccountList.removeAccount(a);
+    void testCalculateTotalSpendingOneSpending() {
+        Spending s = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
+        testAccount.addSpending(s);
 
-        assertEquals(0, testAccountList.getAccountList().size());
+        assertEquals(12.00, testAccount.calculateTotalSpendingAccount());
     }
 
     @Test
-    void testRemoveMultipleAccounts() {
-        Account a1 = new Account("TD Account");
-        Account a2 = new Account("RBC Account");
-        Account a3 = new Account("Cash Deposit Account");
-        testAccountList.addAccount(a1);
-        testAccountList.addAccount(a2);
-        testAccountList.addAccount(a3);
-        testAccountList.removeAccount(a2);
-        testAccountList.removeAccount(a3);
+    void testCalculateTotalSpendingMultipleSpending() {
+        Spending s1 = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
+        Spending s2 = new Spending("Bookstore", 40.00, SpendingCategories.Others);
+        Spending s3 = new Spending("Food for new week", 120.00, SpendingCategories.Groceries);
+        Spending s4 = new Spending("Bus Ticket", 4.00, SpendingCategories.Travel);
+        Spending s5 = new Spending("Ferry Ticket", 18.00, SpendingCategories.Travel);
+        Spending s6 = new Spending("Clothes", 210.00, SpendingCategories.Shopping);
+        Spending s7 = new Spending("Insurance", 75.00, SpendingCategories.Health);
+        testAccount.addSpending(s1);
+        testAccount.addSpending(s2);
+        testAccount.addSpending(s3);
+        testAccount.addSpending(s4);
+        testAccount.addSpending(s5);
+        testAccount.addSpending(s6);
+        testAccount.addSpending(s7);
 
-        assertEquals(1, testAccountList.getAccountList().size());
-        assertEquals(a1, testAccountList.getAccountList().get(0));
+        assertEquals((12.00 + 40.00 + 120.00 + 4.00 + 18.00 + 210.00 + 75.00), testAccount.calculateTotalSpendingAccount());
     }
 
     @Test
-    void testCalculateTotalSpendingOneAccount() {
-        Account a = new Account("TD Account");
-        testAccountList.addAccount(a);
+        //Test for the adding Spending into the SpendingList
+    void testAddEarningOneTime() {
+        Earning e = new Earning("Salary", 12.00, EarningCategories.Salary);
+        testAccount.addEarning(e);
 
-        assertEquals(0.0, testAccountList.calculateTotalSpendingAllAccount());
+        assertEquals(1, testAccount.getEarningList().size());
+        assertEquals(e, testAccount.getEarningList().get(0));
     }
 
     @Test
-    void testCalculateTotalSpendingMultipleAccount() {
-        Account a1 = new Account("TD Account");
-        Account a2 = new Account("RBC Account");
-        Account a3 = new Account("Cash Deposit Account");
-        testAccountList.addAccount(a1);
-        testAccountList.addAccount(a2);
-        testAccountList.addAccount(a3);
+    void testAddEarningMultipleTimes() {
+        Earning e1 = new Earning("Salary", 12.00, EarningCategories.Salary);
+        Earning e2 = new Earning("Interest", 40.00, EarningCategories.Interest);
+        testAccount.addEarning(e1);
+        testAccount.addEarning(e2);
 
-        assertEquals(0.0, testAccountList.calculateTotalSpendingAllAccount());
+        assertEquals(2, testAccount.getEarningList().size());
+        assertEquals(e1, testAccount.getEarningList().get(0));
+        assertEquals(e2, testAccount.getEarningList().get(1));
     }
 
     @Test
-    void testCalculateTotalEarningOneAccount() {
-        Account a = new Account("TD Account");
-        testAccountList.addAccount(a);
+    void testRemoveEarningOneTime() {
+        Earning e = new Earning("Salary", 12.00, EarningCategories.Salary);
+        testAccount.addEarning(e);
+        testAccount.removeEarning(e);
 
-        assertEquals(0.0, testAccountList.calculateTotalEarningAllAccount());
+        assertEquals(0, testAccount.getEarningList().size());
     }
 
     @Test
-    void testCalculateTotalEarningMultipleAccount() {
-        Account a1 = new Account("TD Account");
-        Account a2 = new Account("RBC Account");
-        Account a3 = new Account("Cash Deposit Account");
-        testAccountList.addAccount(a1);
-        testAccountList.addAccount(a2);
-        testAccountList.addAccount(a3);
+    void testRemoveEarningMultipleTimes() {
+        Earning e1 = new Earning("Salary", 12.00, EarningCategories.Salary);
+        Earning e2 = new Earning("Interest", 40.00, EarningCategories.Interest);
+        Earning e3 = new Earning("Others Income", 100.00, EarningCategories.Others);
+        testAccount.addEarning(e1);
+        testAccount.addEarning(e2);
+        testAccount.addEarning(e3);
+        testAccount.removeEarning(e1);
+        testAccount.removeEarning(e3);
 
-        assertEquals(0.0, testAccountList.calculateTotalEarningAllAccount());
+        assertEquals(1, testAccount.getEarningList().size());
+        assertEquals(e2, testAccount.getEarningList().get(0));
+    }
+
+    @Test
+    void testCalculateTotalEarningOneEarning() {
+        Earning e = new Earning("Salary", 12.00, EarningCategories.Salary);
+        testAccount.addEarning(e);
+
+        assertEquals(12.00, testAccount.calculateTotalEarningAccount());
+    }
+
+    @Test
+    void testCalculateTotalEarningMultipleEarnings() {
+        Earning e1 = new Earning("Salary", 12.00, EarningCategories.Salary);
+        Earning e2 = new Earning("Interest", 40.00, EarningCategories.Interest);
+        Earning e3 = new Earning("Others Income", 100.00, EarningCategories.Others);
+        testAccount.addEarning(e1);
+        testAccount.addEarning(e2);
+        testAccount.addEarning(e3);
+
+        assertEquals((12.00 + 40.00 + 100.000), testAccount.calculateTotalEarningAccount());
+    }
+
+    @Test
+    void testStoreSpendingZeroSpending() {
+        testAccount.storeSpending();
+        assertEquals(0, testAccount.getDinningList().size());
+        assertEquals(0, testAccount.getShoppingList().size());
+        assertEquals(0, testAccount.getTravelList().size());
+        assertEquals(0, testAccount.getHealthList().size());
+        assertEquals(0, testAccount.getGroceriesList().size());
+        assertEquals(0, testAccount.getOthersSpendingList().size());
+    }
+
+    @Test
+    void testStoreSpendingOneSpending() {
+        Spending s = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
+        testAccount.addSpending(s);
+        testAccount.storeSpending();
+
+        assertEquals(1, testAccount.getDinningList().size());
+        assertEquals(0, testAccount.getShoppingList().size());
+        assertEquals(0, testAccount.getTravelList().size());
+        assertEquals(0, testAccount.getHealthList().size());
+        assertEquals(0, testAccount.getGroceriesList().size());
+        assertEquals(0, testAccount.getOthersSpendingList().size());
+        assertEquals(s, testAccount.getDinningList().get(0));
+    }
+
+    @Test
+    void testStoreSpendingMultipleSpending() {
+        Spending s1 = new Spending("Sushi", 12.00, SpendingCategories.Dinning);
+        Spending s2 = new Spending("Bookstore", 40.00, SpendingCategories.Others);
+        Spending s3 = new Spending("Food for new week", 120.00, SpendingCategories.Groceries);
+        Spending s4 = new Spending("Bus Ticket", 4.00, SpendingCategories.Travel);
+        Spending s5 = new Spending("Ferry Ticket", 18.00, SpendingCategories.Travel);
+        Spending s6 = new Spending("Clothes", 210.00, SpendingCategories.Shopping);
+        Spending s7 = new Spending("Insurance", 75.00, SpendingCategories.Health);
+        testAccount.addSpending(s1);
+        testAccount.addSpending(s2);
+        testAccount.addSpending(s3);
+        testAccount.addSpending(s4);
+        testAccount.addSpending(s5);
+        testAccount.addSpending(s6);
+        testAccount.addSpending(s7);
+        testAccount.storeSpending();
+
+        assertEquals(1, testAccount.getDinningList().size());
+        assertEquals(1, testAccount.getShoppingList().size());
+        assertEquals(2, testAccount.getTravelList().size());
+        assertEquals(1, testAccount.getHealthList().size());
+        assertEquals(1, testAccount.getGroceriesList().size());
+        assertEquals(1, testAccount.getOthersSpendingList().size());
+        assertEquals(s1, testAccount.getDinningList().get(0));
+        assertEquals(s2, testAccount.getOthersSpendingList().get(0));
+        assertEquals(s3, testAccount.getGroceriesList().get(0));
+        assertEquals(s4, testAccount.getTravelList().get(0));
+        assertEquals(s5, testAccount.getTravelList().get(1));
+        assertEquals(s6, testAccount.getShoppingList().get(0));
+        assertEquals(s7, testAccount.getHealthList().get(0));
+    }
+
+    @Test
+    void testStoreEarningZeroEarning() {
+        testAccount.storeEarning();
+        assertEquals(0, testAccount.getSalaryList().size());
+        assertEquals(0, testAccount.getInterestList().size());
+        assertEquals(0, testAccount.getOthersEarningList().size());
+    }
+
+    @Test
+    void testStoreEarningOneEarning() {
+        Earning e = new Earning("Salary", 12.00, EarningCategories.Salary);
+        testAccount.addEarning(e);
+        testAccount.storeEarning();
+
+        assertEquals(1, testAccount.getSalaryList().size());
+        assertEquals(0, testAccount.getInterestList().size());
+        assertEquals(0, testAccount.getOthersEarningList().size());
+        assertEquals(e, testAccount.getSalaryList().get(0));
+    }
+
+    @Test
+    void testStoreEarningMultipleEarnings() {
+        Earning e1 = new Earning("Salary", 12.00, EarningCategories.Salary);
+        Earning e2 = new Earning("Interest", 40.00, EarningCategories.Interest);
+        Earning e3 = new Earning("Others Income", 100.00, EarningCategories.Others);
+        Earning e4 = new Earning("Others", 500.00, EarningCategories.Others);
+        Earning e5 = new Earning("abcde", 10.00, EarningCategories.Others);
+        testAccount.addEarning(e1);
+        testAccount.addEarning(e2);
+        testAccount.addEarning(e3);
+        testAccount.addEarning(e4);
+        testAccount.addEarning(e5);
+        testAccount.storeEarning();
+
+        assertEquals(1, testAccount.getSalaryList().size());
+        assertEquals(1, testAccount.getInterestList().size());
+        assertEquals(3, testAccount.getOthersEarningList().size());
+        assertEquals(e1, testAccount.getSalaryList().get(0));
+        assertEquals(e2, testAccount.getInterestList().get(0));
+        assertEquals(e3, testAccount.getOthersEarningList().get(0));
+        assertEquals(e4, testAccount.getOthersEarningList().get(1));
+        assertEquals(e5, testAccount.getOthersEarningList().get(2));
     }
 }

@@ -10,17 +10,18 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class JsonWriterTest {
+public class JsonAccountWriterTest {
+
     protected void checkAccount(String name, Account account) {
         assertEquals(name, account.getNameAccount());
     }
 
     @Test
-    void testWriterInvalidFile() {
+    void testAccountWriterInvalidFile() {
         try {
             AccountList accountList = new AccountList("My account list");
-            JsonWriter writer = new JsonWriter("./data/my\0illegal:fileName.json");
-            writer.open();
+            JsonAccountWriter accountWriter = new JsonAccountWriter("./data/my\0illegal:fileName.json");
+            accountWriter.open();
             fail("IOException was expected");
         } catch (IOException e) {
             // pass
@@ -28,16 +29,16 @@ public class JsonWriterTest {
     }
 
     @Test
-    void testWriterEmptyAccountList() {
+    void testAccountWriterEmptyAccountList() {
         try {
             AccountList accountList = new AccountList("My account list");
-            JsonWriter writer = new JsonWriter("./data/testWriterEmptyAccountList.json");
-            writer.open();
-            writer.write(accountList);
-            writer.close();
+            JsonAccountWriter accountWriter = new JsonAccountWriter("./data/testAccountWriterEmptyAccountList.json");
+            accountWriter.open();
+            accountWriter.write(accountList);
+            accountWriter.close();
 
-            JsonReader reader = new JsonReader("./data/testWriterEmptyAccountList.json");
-            accountList = reader.read();
+            JsonAccountReader accountReader = new JsonAccountReader("./data/testAccountWriterEmptyAccountList.json");
+            accountList = accountReader.read();
             assertEquals("My account list", accountList.getName());
             assertEquals(0, accountList.getAccountList().size());
         } catch (IOException e) {
@@ -46,18 +47,18 @@ public class JsonWriterTest {
     }
 
     @Test
-    void testWriterGeneralAccountList() {
+    void testAccountWriterGeneralAccountList() {
         try {
             AccountList accountList = new AccountList("My account list");
             accountList.addAccount(new Account("account1"));
             accountList.addAccount(new Account("account2"));
-            JsonWriter writer = new JsonWriter("./data/testWriterGeneralAccountList.json");
-            writer.open();
-            writer.write(accountList);
-            writer.close();
+            JsonAccountWriter accountWriter = new JsonAccountWriter("./data/testAccountWriterGeneralAccountList.json");
+            accountWriter.open();
+            accountWriter.write(accountList);
+            accountWriter.close();
 
-            JsonReader reader = new JsonReader("./data/testWriterGeneralAccountList.json");
-            accountList = reader.read();
+            JsonAccountReader accountReader = new JsonAccountReader("./data/testAccountWriterGeneralAccountList.json");
+            accountList = accountReader.read();
             assertEquals("My account list", accountList.getName());
             List<Account> accounts = accountList.getAccountList();
             assertEquals(2, accounts.size());

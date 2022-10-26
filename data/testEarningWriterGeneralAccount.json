@@ -1,0 +1,16 @@
+{
+    "earningList": [
+        {
+            "amount": 1,
+            "name": "a",
+            "categories": "Salary"
+        },
+        {
+            "amount": 2,
+            "name": "b",
+            "categories": "Others"
+        }
+    ],
+    "spendingList": [],
+    "nameAccount": "My account"
+}

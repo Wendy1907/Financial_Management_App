@@ -17,16 +17,14 @@ public class MainPage {
     private AccountList accountList;
     private JsonAccountWriter jsonAccountWriter;
     private JsonAccountReader jsonAccountReader;
+
     //EFFECTS: run the main page
     public MainPage() throws FileNotFoundException {
-        accountList = new AccountList("AccountList");
         input = new Scanner(System.in);
         input.useDelimiter("\n");
-
+        accountList = new AccountList("AccountList");
         jsonAccountWriter = new JsonAccountWriter(JSON_STORE_ACCOUNT);
         jsonAccountReader = new JsonAccountReader(JSON_STORE_ACCOUNT);
-
-
         runMain();
     }
 

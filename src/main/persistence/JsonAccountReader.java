@@ -1,7 +1,6 @@
 package persistence;
 
-import model.Account;
-import model.AccountList;
+import model.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -61,5 +60,45 @@ public class JsonAccountReader {
         String name = jsonObject.getString("nameAccount");
         Account account = new Account(name);
         accountList.addAccount(account);
+        addSpendingList(account, jsonObject);
+        addEarningList(account, jsonObject);
+    }
+
+    //MODIFIES: account
+    //EFFECTS: parses spending from JSON object and adds them to SpendingLíst
+    private void addSpendingList(Account spendingList, JSONObject jsonObject) {
+        JSONArray jsonAll = jsonObject.getJSONArray("spendingList");
+        for (Object json : jsonAll) {
+            JSONObject next = (JSONObject) json;
+            addSpendingItem(spendingList, next);
+        }
+    }
+
+    private void addSpendingItem(Account spendingList, JSONObject jsonObject) {
+        String name = jsonObject.getString("name");
+        double amount = jsonObject.getDouble("amount");
+        SpendingCategories categories = SpendingCategories.valueOf(jsonObject.getString("categories"));
+        Spending spending = new Spending(name, amount, categories);
+        spendingList.addSpending(spending);
+    }
+
+    //MODIFIES: earning
+    //EFFECTS: parses earning from JSON object and adds them to EarningList
+    private void addEarningList(Account earningList, JSONObject jsonObject) {
+        JSONArray jsonAll = jsonObject.getJSONArray("earningList");
+        for (Object json : jsonAll) {
+            JSONObject next = (JSONObject) json;
+            addEarning(earningList, next);
+        }
+    }
+
+    //MODIFIES: earning
+    //EFFECTS: parses earning from JSON object and adds it to EarningList
+    private void addEarning(Account earningList, JSONObject jsonObject) {
+        String name = jsonObject.getString("name");
+        double amount = jsonObject.getDouble("amount");
+        EarningCategories categories = EarningCategories.valueOf(jsonObject.getString("categories"));
+        Earning earning = new Earning(name, amount, categories);
+        earningList.addEarning(earning);
     }
 }

@@ -1,12 +1,34 @@
 {
     "nameAccountList": "AccountList",
-    "accounts": [{
-        "earningList": [],
-        "spendingList": [{
-            "amount": 1,
-            "name": "a",
-            "categories": "Others"
-        }],
-        "nameAccount": "TD"
-    }]
+    "accounts": [
+        {
+            "earningList": [{
+                "amount": 500,
+                "name": "Salary",
+                "categories": "Salary"
+            }],
+            "spendingList": [
+                {
+                    "amount": 15,
+                    "name": "Sushi",
+                    "categories": "Dinning"
+                },
+                {
+                    "amount": 100,
+                    "name": "Shopping",
+                    "categories": "Shopping"
+                }
+            ],
+            "nameAccount": "TD"
+        },
+        {
+            "earningList": [],
+            "spendingList": [{
+                "amount": 1,
+                "name": "a",
+                "categories": "Health"
+            }],
+            "nameAccount": "RBC"
+        }
+    ]
 }

@@ -2,13 +2,25 @@
     "nameAccountList": "My account list",
     "accounts": [
         {
-            "earningList": [],
-            "spendingList": [],
+            "earningList": [{
+                "amount": 500,
+                "name": "Salary",
+                "categories": "Salary"
+            }],
+            "spendingList": [{
+                "amount": 15,
+                "name": "Sushi",
+                "categories": "Dinning"
+            }],
             "nameAccount": "account1"
         },
         {
             "earningList": [],
-            "spendingList": [],
+            "spendingList": [{
+                "amount": 100,
+                "name": "Shopping",
+                "categories": "Shopping"
+            }],
             "nameAccount": "account2"
         }
     ]

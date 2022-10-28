@@ -83,7 +83,6 @@ public class AccountApp {
         System.out.println("\tde -> DELETE Earning from your Account");
         System.out.println("\te -> get TOTAL of Earning value in your Account");
         System.out.println("\tve -> VIEW the list of Earning that you have in your Account");
-        System.out.println("\tsa -> SAVE information of the account");
         System.out.println("\tq -> BACK to AccountList page");
     }
 

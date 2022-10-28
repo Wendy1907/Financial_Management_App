@@ -3,18 +3,18 @@
     "accounts": [
         {
             "earningList": [{
-                "amount": 600,
+                "amount": 400,
                 "name": "Salary",
                 "categories": "Salary"
             }],
             "spendingList": [
                 {
-                    "amount": 15,
+                    "amount": 20,
                     "name": "Sushi",
                     "categories": "Dinning"
                 },
                 {
-                    "amount": 100,
+                    "amount": 300,
                     "name": "Shopping",
                     "categories": "Shopping"
                 }
@@ -22,16 +22,8 @@
             "nameAccount": "TD"
         },
         {
-            "earningList": [{
-                "amount": 400,
-                "name": "400.00",
-                "categories": "Salary"
-            }],
-            "spendingList": [{
-                "amount": 50,
-                "name": "a",
-                "categories": "Travel"
-            }],
+            "earningList": [],
+            "spendingList": [],
             "nameAccount": "RBC"
         }
     ]

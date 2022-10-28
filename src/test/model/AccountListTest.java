@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Unit test for AccountList class
+ */
 public class AccountListTest {
     private AccountList testAccountList;
 

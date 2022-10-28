@@ -10,6 +10,7 @@ import java.time.LocalDate;
  * record the Date for each Spending transaction.
  */
 
+// Represents a spending having a name, amount of spending, category and the date of that spending
 public class Spending implements Writable {
     private String name;
     private double amount;

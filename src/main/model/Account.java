@@ -13,6 +13,8 @@ import java.util.List;
  * into different categories. We also can change the list of Spending and Earning by adding or removing
  * Spending/Earning transaction from these lists.
  */
+
+// Represents an account having a name, spending list, earning list
 public class Account implements Writable {
     private String nameAccount;
     private List<Spending> spendingList;
@@ -27,6 +29,7 @@ public class Account implements Writable {
     private List<Earning> interestList;
     private List<Earning> othersEarningList;
 
+    //EFFECTS: constructs an account with name, spending list and earning list
     public Account(String nameAccount) {
         this.nameAccount = nameAccount;
         spendingList = new ArrayList<>();

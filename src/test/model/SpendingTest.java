@@ -7,6 +7,9 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Unit test for Spending class
+ */
 public class SpendingTest {
     private Spending testSpending;
 

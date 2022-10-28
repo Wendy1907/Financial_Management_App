@@ -9,6 +9,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+/**
+ * Test for JsonAccountWriter
+ */
 public class JsonAccountWriterTest {
 
     protected void checkAccount(String name, Account account) {

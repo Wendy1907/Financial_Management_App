@@ -10,6 +10,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+// This JsonAccountReader references code from this repo
+// Link: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
+
+// Represents a reader that reads AccountList from JSON data stored in file
 public class JsonAccountReader {
     private String source;
 
@@ -65,7 +69,7 @@ public class JsonAccountReader {
     }
 
     //MODIFIES: account
-    //EFFECTS: parses spending from JSON object and adds them to SpendingLíst
+    //EFFECTS: parses spending from JSON object and adds them to SpendingList
     private void addSpendingList(Account spendingList, JSONObject jsonObject) {
         JSONArray jsonAll = jsonObject.getJSONArray("spendingList");
         for (Object json : jsonAll) {
@@ -74,6 +78,8 @@ public class JsonAccountReader {
         }
     }
 
+    //MODIFIES: account
+    //EFFECTS: parses spending from JSON object and add it to SpendingList
     private void addSpendingItem(Account spendingList, JSONObject jsonObject) {
         String name = jsonObject.getString("name");
         double amount = jsonObject.getDouble("amount");

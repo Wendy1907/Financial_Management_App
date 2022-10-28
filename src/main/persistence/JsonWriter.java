@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+// This JsonAccountWriter references code from this repo
+// Link: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
+
+// Represents a writer that writes JSON representation of AccountList to file
 public class JsonWriter {
     static final int TAB = 4;
     private PrintWriter writer;

@@ -3,7 +3,7 @@
     "accounts": [
         {
             "earningList": [{
-                "amount": 500,
+                "amount": 600,
                 "name": "Salary",
                 "categories": "Salary"
             }],
@@ -22,11 +22,15 @@
             "nameAccount": "TD"
         },
         {
-            "earningList": [],
+            "earningList": [{
+                "amount": 400,
+                "name": "400.00",
+                "categories": "Salary"
+            }],
             "spendingList": [{
-                "amount": 1,
+                "amount": 50,
                 "name": "a",
-                "categories": "Health"
+                "categories": "Travel"
             }],
             "nameAccount": "RBC"
         }

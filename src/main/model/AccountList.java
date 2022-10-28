@@ -13,10 +13,13 @@ import java.util.List;
  * that person has spent and earned. We also can change the list of Account by adding or removing
  * Account from the Account lists.
  */
+
+//Represent an account list with name of that account list and list of all accounts inside.
 public class AccountList implements Writable {
     private String name;
     private List<Account> accountList;
 
+    //EFFECTS: constructs an account list with name and list of all accounts inside.
     public AccountList(String name) {
         this.name = name;
         accountList = new ArrayList<>();

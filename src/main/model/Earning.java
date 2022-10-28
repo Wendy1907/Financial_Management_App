@@ -9,6 +9,8 @@ import java.time.LocalDate;
  * This is the Earning class. We could track the Earning by the name (description for that earning),
  * amount of money have earned, the categories of that earning, and record the date of that Earning.
  */
+
+// Represents an earning having a name, amount of earning, category and the date of earning
 public class Earning implements Writable {
     private String name;
     private double amount;

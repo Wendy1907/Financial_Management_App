@@ -41,3 +41,27 @@ Earning.
 financial data to file and have the option to do so or not.
 - As a user, I want to be able to be able to load my financial data from file that I have saved before.
 
+## Instructions for Grader:
+- You can add and remove an account from the account list by: First, login into the Account List with user name: 
+anhthu19 and password: 210. Then, it will view the Home Page with 3 buttons, you can view the Account List Page by click 
+into the "Account List" button. You can add the new Account by clicking the Add button on top, and then type the Name of 
+the new Account, then press "OK". Then, you can see the new Account has been added. To delete the Account that you want,
+click on the Account that you want to delete and press "Delete" button. Then you will see the selected Account has been
+removed.
+- You can add and remove a spending from the Account by: From the Account List Page, you type out the name of the 
+Account that you want to get in details and then press the "Get In" button. Then you can view the Account Page. Switch
+to the Spending Tab. You can add the new Spending by clicking the Add button on top, and then type the Description, 
+Amount, and Category of that Spending, then press "OK". Then, you can see the new Spending has been added 
+and show on the list. To delete the Spending that you want, click on the Spending that you want to delete and press 
+"Delete" button. Then you will see the selected Spending has been removed.
+- You can add and remove an earning from the Account by: From the Account List Page, you type out the name of the
+Account that you want to get in details and then press the "Get In" button. Then you can view the Account Page. Switch
+to the Earning Tab. You can add the new Earning by clicking the Add button on top, and then type the Description,
+Amount, and Category of that Earning, then press "OK". Then, you can see the new Earning has been added
+and show on the list. To delete the Earning that you want, click on the Earning that you want to delete and press
+"Delete" button. Then you will see the selected Earning has been removed.
+- You can locate my visual component by looking at the Home page after sign in, there are a lot of Panel with different 
+background colors, when you go into the Account List Page, you can see that the "Add" button has the add icon with it. 
+And also, in the external pages for adding Account, adding Spending, adding Earning, you can see different images in that.
+- You can save the state of Account List by clicking "Save Data" button on the Home Page(the page after the Login).
+- You can reload the state of Account List by clicking "Load Data" button on the Home Page(the page after the Login).

@@ -50,6 +50,7 @@ public class MainTab extends Tab {
         }
     }
 
+    //EFFECTS: create a summary for Total Spending and Total Earning of the Account
     private void data() {
         JPanel dataRow = new JPanel(new GridLayout(2,2));
         this.add(dataRow);

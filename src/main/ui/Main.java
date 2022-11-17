@@ -1,5 +1,8 @@
 package ui;
 
+/**
+ * This is the Main page that run the Program
+ */
 public class Main {
     public static void main(String[] args) {
 //        try {

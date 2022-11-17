@@ -38,9 +38,10 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
 
     protected AccountList accountList;
 
+    // constructor
     public AccountListPage(AccountList accountList) {
         this.accountList = accountList;
-        frame = new JFrame();
+        frame = new JFrame("Account List Page");
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         topPanel = new JPanel(new GridLayout(1, 2));
         topPanel.setBackground(new Color(147, 169, 209));
@@ -69,6 +70,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         frame.add(bottomPanel, BorderLayout.SOUTH);
     }
 
+    //EFFECTS: create the Add Button
     private void createAddButton() {
         addButton = new JButton("Add");
 
@@ -94,6 +96,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
 
     }
 
+    //EFFECTS: Action Event for the Add Button
     private void processCommand(ActionEvent e, JPanel panel, JTextField accountName) {
         if (e.getSource() == addButton) {
             int result = createImageIcon(panel);
@@ -107,6 +110,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         }
     }
 
+    //EFFECT: create an Image Icon for Adding external page
     private int createImageIcon(JPanel panel) {
         Image myPicture = null;
         try {
@@ -121,6 +125,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         return result;
     }
 
+    //EFFECT: check all of exceptions
     private void checkException(String name) {
         if (name == null | name.isEmpty() | name.equals("")) {
             JOptionPane.showMessageDialog(null, "You haven't enter the name for the Account!",
@@ -131,6 +136,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         }
     }
 
+    //EFFECTS: create the Pane List for List of Account
     private void createPaneList() {
         centerPanel = new JPanel(new BorderLayout());
         JPanel selection = createSelectionBar();
@@ -141,6 +147,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         centerPanel.add(accountPanel, BorderLayout.CENTER);
     }
 
+    //EFFECTS: create Account List
     private JScrollPane createAccountList() {
         listModel = new DefaultListModel();
         for (Account a : accountList.getAccountList()) {
@@ -157,6 +164,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         return accountPanel;
     }
 
+    //EFFECTS: create the SelectionBar for the AccountList view
     private JPanel createSelectionBar() {
         JPanel example = new JPanel(new GridLayout(1,2));
         createAddButton();
@@ -167,6 +175,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         return example;
     }
 
+    //EFFECTS: create the Delete Button.
     private void createDeleteButton() {
         deleteButton = new JButton("Delete");
         if (accountList.getAccountList().isEmpty()) {
@@ -189,6 +198,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         });
     }
 
+    // EFFECTS: create to view the Spending Total of the Account List.
     private void createSpendingTotal() {
         spendingTotalLabel = new JLabel("Total Spending:");
         bottomPanel.add(spendingTotalLabel);
@@ -199,6 +209,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         spendingTotal.setEditable(false);
     }
 
+    // EFFECTS: create to view the Earning Total of the Account List.
     private void createEarningTotal() {
         earningTotalLabel = new JLabel("Total Earning:");
         bottomPanel.add(earningTotalLabel);
@@ -209,6 +220,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         earningTotal.setEditable(false);
     }
 
+    // EFFECTS: create Get Into Button and set Action on it
     private void createGetInto() {
         accountGetInto = new JLabel("Account to Get In Details");
         bottomPanel.add(accountGetInto);
@@ -226,6 +238,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
     }
 
 
+    //EFFECTS: Set Action for the Get Into Button and Cancel Button
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "cancel") {
@@ -235,7 +248,6 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
             for (Account a : accountList.getAccountList()) {
                 if (accountToGetInto.equals(a.getNameAccount())) {
                     new AccountPage(a);
-                    frame.setVisible(false);
                 }
             }
         }

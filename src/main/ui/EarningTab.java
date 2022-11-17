@@ -29,6 +29,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
 
     String[] earningCategories = {"Salary", "Interest", "Others"};
 
+    // constructor
     public EarningTab(AccountPage controller) {
         super(controller);
         setLayout(new BorderLayout());
@@ -53,6 +54,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
         add(bottomPanel, BorderLayout.SOUTH);
     }
 
+    // EFFECTS: create the Add Button
     private void createAddButton() {
         addButton = new JButton("Add");
 
@@ -77,6 +79,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
 
 
 
+    // EFFECTS: Add Action for the Add Button
     private void processCommand(ActionEvent e, JPanel panel, JTextField earningDescription,
                                 JTextField earningAmountItem, JComboBox earningCategoryList) {
         if (e.getSource() == addButton) {
@@ -94,6 +97,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
         }
     }
 
+    // EFFECTS: create the Image Icon in th Add Earning external Page.
     private int createImageIcon(JPanel panel) {
         Image myPicture = null;
         try {
@@ -108,6 +112,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
         return result;
     }
 
+    //EFFECTS: Check the Exceptions
     private void checkException(String name) {
         if (name == null | name.isEmpty() | name.equals("")) {
             JOptionPane.showMessageDialog(null, "You haven't enter the name for the Earning!",
@@ -118,6 +123,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
         }
     }
 
+    //EFFECTS: create the Pane List for List of Earning
     private void createPaneList() {
         centerPanel = new JPanel(new BorderLayout());
         JPanel selection = createSelectionBar();
@@ -128,6 +134,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
         centerPanel.add(accountPanel, BorderLayout.CENTER);
     }
 
+    // EFFECTS: create the Earning List
     private JScrollPane createEarningList() {
         listModel = new DefaultListModel();
         for (Earning e : controller.account.getEarningList()) {
@@ -155,6 +162,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
         return example;
     }
 
+    //EFFECTS: create the Delete Button.
     private void createDeleteButton() {
         deleteButton = new JButton("Delete");
         if (controller.account.getEarningList().isEmpty()) {
@@ -178,6 +186,7 @@ public class EarningTab extends Tab implements ListSelectionListener {
         });
     }
 
+    // EFFECTS: create to view the Earning Total of the Account.
     private void createEarningAmount() {
         earningAmountLabel = new JLabel("Total Earning in this Account:");
         bottomPanel.add(earningAmountLabel);

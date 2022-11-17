@@ -3,6 +3,9 @@ package ui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * This is the Login View that contains code for Login Page
+ */
 public class LoginView extends JFrame {
     JLabel nameLabel = new JLabel("Welcome to Financial Tracker App!");
 
@@ -91,6 +94,7 @@ public class LoginView extends JFrame {
         centerPanel.add(resetBtn);
     }
 
+    //getter
     public JTextField getUserNameInput() {
         return userNameInput;
     }

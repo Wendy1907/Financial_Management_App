@@ -13,20 +13,20 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Home extends Frame implements ActionListener {
-//    private static HomeActionListener homeActionListener;
+
 
     private static final String JSON_STORE_ACCOUNT = "./data/User.json";
     private JsonAccountWriter jsonAccountWriter;
     private JsonAccountReader jsonAccountReader;
     private AccountList accountList = new AccountList("Wendy's Account List");
 
+    //constructor
     public Home() {
-//        homeActionListener = new HomeActionListener(this);
 
         jsonAccountWriter = new JsonAccountWriter(JSON_STORE_ACCOUNT);
         jsonAccountReader = new JsonAccountReader(JSON_STORE_ACCOUNT);
 
-        Frame frame = new Frame("Financial Tracker");
+        Frame frame = new Frame("Home Page");
 
         Panel panelForButtons = new Panel();
         Panel panelForLabel = new Panel();
@@ -103,6 +103,7 @@ public class Home extends Frame implements ActionListener {
 //    }
 
 
+    // getter and setter
     public void setAccountList(AccountList accountList) {
         this.accountList = accountList;
     }
@@ -111,6 +112,7 @@ public class Home extends Frame implements ActionListener {
         return accountList;
     }
 
+    //EFFECTS: Override the ActionListener to get some Action for the Button
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("accounts")) {
@@ -122,7 +124,7 @@ public class Home extends Frame implements ActionListener {
         }
     }
 
-    //EFFECTS: save the data to file
+    //EFFECTS: Save the data to file
     private void saveData() {
         try {
             jsonAccountWriter.open();
@@ -134,6 +136,7 @@ public class Home extends Frame implements ActionListener {
         }
     }
 
+    // EFFECTS: Load the data to file
     private void loadData() {
         try {
             AccountList accountListSet = jsonAccountReader.read();

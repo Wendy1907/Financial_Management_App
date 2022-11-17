@@ -24,6 +24,7 @@ public class AccountPage extends JFrame {
 
 
 
+    // constructor
     public AccountPage(Account account) {
         super("Account");
         this.account = account;
@@ -41,6 +42,7 @@ public class AccountPage extends JFrame {
         getContentPane().setBackground(new Color(247, 202, 202));
     }
 
+    // EFFECTS: load Tabs into the Frame
     public void loadTabs() {
         mainTab = new MainTab(this);
         spendingTab = new SpendingTab(this);

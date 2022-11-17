@@ -13,6 +13,9 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * This is the code fpr the Account List Page
+ */
 public class AccountListPage extends JFrame implements ListSelectionListener, ActionListener {
     private static final String JSON_STORE_ACCOUNT = "./data/User.json";
     private JFrame frame;
@@ -56,7 +59,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         centerPanel.setBackground(new Color(135, 206, 235));
 
 
-        bottomPanel = new JPanel(new GridLayout(5,2));
+        bottomPanel = new JPanel(new GridLayout(4,2));
         // Total Spending , Total Earning View
         createSpendingTotal();
         createEarningTotal();
@@ -248,6 +251,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
             for (Account a : accountList.getAccountList()) {
                 if (accountToGetInto.equals(a.getNameAccount())) {
                     new AccountPage(a);
+                    frame.setVisible(false);
                 }
             }
         }

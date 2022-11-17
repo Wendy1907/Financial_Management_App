@@ -13,6 +13,9 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * This is the code for the Spending Tab of the Account Page
+ */
 public class SpendingTab extends Tab implements ListSelectionListener {
     private JPanel topPanel;
     private JButton addButton;

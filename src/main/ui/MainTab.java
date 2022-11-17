@@ -6,7 +6,9 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
+/**
+ * This is the code for the Main Tab in the Account Page
+ */
 public class MainTab extends Tab {
 
     public MainTab(AccountPage controller) {
@@ -26,7 +28,7 @@ public class MainTab extends Tab {
         JPanel topPanel = new JPanel(new GridLayout(2, 1));
         JLabel greeting = new JLabel(
                 "Welcome\n"
-                + "to your Account!",
+                + " to your Account!",
                 JLabel.CENTER);
         JLabel subTitle = new JLabel("Shop smart, spend wise!", JLabel.CENTER);
         greeting.setFont(new Font("Verdana", Font.BOLD, 16));

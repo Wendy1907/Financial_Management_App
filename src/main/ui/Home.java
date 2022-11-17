@@ -12,6 +12,9 @@ import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * This is the code for Home Page
+ */
 public class Home extends Frame implements ActionListener {
 
 

@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This is the Action Listener for the Login Page
+ */
 public class LoginHandler implements ActionListener {
     private LoginView loginView;
 

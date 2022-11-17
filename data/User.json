@@ -1,43 +1,12 @@
 {
     "nameAccountList": "Wendy's Account List",
-    "accounts": [
-        {
-            "earningList": [{
-                "amount": 1000,
-                "name": "Salary",
-                "categories": "Salary"
-            }],
-            "spendingList": [{
-                "amount": 20,
-                "name": "Sushi",
-                "categories": "Dinning"
-            }],
-            "nameAccount": "TD"
-        },
-        {
-            "earningList": [{
-                "amount": 500,
-                "name": "Interest",
-                "categories": "Interest"
-            }],
-            "spendingList": [
-                {
-                    "amount": 100,
-                    "name": "Shopping",
-                    "categories": "Shopping"
-                },
-                {
-                    "amount": 50,
-                    "name": "Food",
-                    "categories": "Groceries"
-                },
-                {
-                    "amount": 450,
-                    "name": "MSP",
-                    "categories": "Health"
-                }
-            ],
-            "nameAccount": "RBC"
-        }
-    ]
+    "accounts": [{
+        "earningList": [],
+        "spendingList": [{
+            "amount": 12,
+            "name": "Shopping",
+            "categories": "Dinning"
+        }],
+        "nameAccount": "Shitty"
+    }]
 }

@@ -289,4 +289,21 @@ public class AccountTest {
         assertEquals(e4, testAccount.getOthersEarningList().get(1));
         assertEquals(e5, testAccount.getOthersEarningList().get(2));
     }
+
+    @Test
+    void testConvertToSpendingCategory() {
+        assertEquals(testAccount.convertToSpendingCategory("Dinning"), SpendingCategories.Dinning);
+        assertEquals(testAccount.convertToSpendingCategory("Shopping"), SpendingCategories.Shopping);
+        assertEquals(testAccount.convertToSpendingCategory("Travel"), SpendingCategories.Travel);
+        assertEquals(testAccount.convertToSpendingCategory("Health"), SpendingCategories.Health);
+        assertEquals(testAccount.convertToSpendingCategory("Groceries"), SpendingCategories.Groceries);
+        assertEquals(testAccount.convertToSpendingCategory("a"), SpendingCategories.Others);
+    }
+
+    @Test
+    void testConvertToEarningCategory() {
+        assertEquals(testAccount.convertToEarningCategory("Salary"), EarningCategories.Salary);
+        assertEquals(testAccount.convertToEarningCategory("Interest"), EarningCategories.Interest);
+        assertEquals(testAccount.convertToEarningCategory("a"), EarningCategories.Others);
+    }
 }

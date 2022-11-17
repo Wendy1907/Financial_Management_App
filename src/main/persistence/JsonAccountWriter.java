@@ -1,10 +1,10 @@
 package persistence;
 
-// This JsonAccountWriter references code from this repo
-// Link: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
-
 import model.AccountList;
 import org.json.JSONObject;
+
+// This JsonAccountWriter references code from this repo
+// Link: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
 
 // Represents a writer that writes JSON representation of AccountList to file
 public class JsonAccountWriter extends JsonWriter {
@@ -20,6 +20,4 @@ public class JsonAccountWriter extends JsonWriter {
         JSONObject json = accountList.toJson();
         saveToFile(json.toString(TAB));
     }
-
-
 }

@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 
 public class MainPage {
-    private static final String JSON_STORE_ACCOUNT = "./data/Account.json";
+    private static final String JSON_STORE_ACCOUNT = "./data/User.json";
     private Scanner input;
     private AccountList accountList;
     private JsonAccountWriter jsonAccountWriter;

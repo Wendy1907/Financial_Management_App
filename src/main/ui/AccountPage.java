@@ -14,10 +14,6 @@ public class AccountPage extends JFrame {
     private static final int EARNING_TAB_INDEX = 2;
 
     protected Account account;
-//    protected Spending spending;
-//    protected SpendingCategories spendingCategories;
-//    protected Earning earning;
-//    protected EarningCategories earningCategories;
 
 
     private JTabbedPane topBar;
@@ -31,20 +27,6 @@ public class AccountPage extends JFrame {
     public AccountPage(Account account) {
         super("Account");
         this.account = account;
-//        spending = new Spending();
-//        spendingCategories = new SpendingCategories();
-//        earning = new Earning();
-
-        setSize(600, 400);
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-//        addWindowListener(new java.awt.event.WindowAdapter() {
-//            @Override
-//            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-//                printLog(EventLog.getInstance());
-//                //THEN you can exit the program
-//                System.exit(0);
-//            }
-//        });
 
         topBar = new JTabbedPane();
         topBar.setTabPlacement(JTabbedPane.TOP);

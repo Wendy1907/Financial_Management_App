@@ -189,6 +189,34 @@ public class Account implements Writable {
         }
     }
 
+    public SpendingCategories convertToSpendingCategory(String s) {
+        switch (s) {
+            case "Dinning":
+                return SpendingCategories.Dinning;
+            case "Shopping":
+                return SpendingCategories.Shopping;
+            case "Travel":
+                return SpendingCategories.Travel;
+            case "Health":
+                return SpendingCategories.Health;
+            case "Groceries":
+                return SpendingCategories.Groceries;
+            default:
+                return SpendingCategories.Others;
+        }
+    }
+
+    public EarningCategories convertToEarningCategory(String s) {
+        switch (s) {
+            case "Salary":
+                return EarningCategories.Salary;
+            case "Interest":
+                return EarningCategories.Interest;
+            default:
+                return EarningCategories.Others;
+        }
+    }
+
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

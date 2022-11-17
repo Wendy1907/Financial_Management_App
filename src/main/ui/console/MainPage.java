@@ -1,7 +1,8 @@
-package ui;
+package ui.console;
 
 import model.AccountList;
-import persistence.*;
+import persistence.JsonAccountReader;
+import persistence.JsonAccountWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -43,8 +44,8 @@ public class MainPage {
         }
     }
 
-    // MODIFIES: this
-    // EFFECTS: processes user command
+     //MODIFIES: this
+     //EFFECTS: processes user command
     private void processCommand(String command) {
         switch (command) {
             case "a":
@@ -61,7 +62,7 @@ public class MainPage {
         }
     }
 
-    // EFFECTS: saves the AccountList to file
+     //EFFECTS: saves the AccountList to file
     private void saveAccountList() {
         try {
             jsonAccountWriter.open();
@@ -86,7 +87,7 @@ public class MainPage {
         }
     }
 
-    // EFFECTS: displays menu of options to user
+     //EFFECTS: displays menu of options to user
     private void displayMenu() {
         System.out.println("\n\n=======Welcome to your personal Spending and Earning tracker=======");
         System.out.println("-----------------------Shop smart, spend wise-----------------------");

@@ -255,6 +255,7 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
 
 
     @Override
+    // EFFECTS: if there is no item selected, disable the button
     public void valueChanged(ListSelectionEvent e) {
         if (e.getValueIsAdjusting()) {
             return;

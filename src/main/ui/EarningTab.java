@@ -16,6 +16,7 @@ import java.io.IOException;
 /**
  * This is the code for the Earning Tab of the Account Page
  */
+
 public class EarningTab extends Tab implements ListSelectionListener {
     private JPanel topPanel;
     private JButton addButton;

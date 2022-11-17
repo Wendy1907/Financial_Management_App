@@ -15,6 +15,7 @@ import java.io.IOException;
 /**
  * This is the code for Home Page
  */
+
 public class Home extends Frame implements ActionListener {
 
 
@@ -99,11 +100,6 @@ public class Home extends Frame implements ActionListener {
         });
     }
 
-//    private static void setActionCommand(Button accountList, Button load, Button save) {
-//        accountList.addActionListener(homeActionListener);
-//        save.addActionListener(homeActionListener);
-//        load.addActionListener(homeActionListener);
-//    }
 
 
     // getter and setter

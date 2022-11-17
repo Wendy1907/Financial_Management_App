@@ -8,6 +8,8 @@ import java.awt.*;
 /**
  * This is the code for Account Page which contains Three Tabs: Main Tab, Spending Tab, Eanring Tab
  */
+
+
 public class AccountPage extends JFrame {
 //    private JFrame frame;
 //    private JPanel panel;

@@ -9,6 +9,7 @@ import java.io.IOException;
 /**
  * This is the code for the Main Tab in the Account Page
  */
+
 public class MainTab extends Tab {
 
     public MainTab(AccountPage controller) {

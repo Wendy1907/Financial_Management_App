@@ -1,4 +1,8 @@
 {
     "nameAccountList": "Wendy's Account List",
-    "accounts": []
+    "accounts": [{
+        "earningList": [],
+        "spendingList": [],
+        "nameAccount": "a"
+    }]
 }

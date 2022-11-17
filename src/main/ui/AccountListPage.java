@@ -34,7 +34,6 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
     private JTextField accountNameInput;
     private JButton getIntoButton;
     private JButton cancelButton;
-    //private JButton saveButton;
 
 
     protected AccountList accountList;
@@ -55,13 +54,12 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
         JScrollPane scrollPane = new JScrollPane(centerPanel);
         centerPanel.setBackground(new Color(135, 206, 235));
 
-        //createGetIntoAccount();
+
         bottomPanel = new JPanel(new GridLayout(5,2));
         // Total Spending , Total Earning View
         createSpendingTotal();
         createEarningTotal();
         createGetInto();
-        //createSaveButton();
 
         frame.setVisible(true);
         frame.setSize(600, 400);
@@ -227,12 +225,6 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
 
     }
 
-//    private void createSaveButton() {
-//        saveButton = new JButton("Save");
-//        bottomPanel.add(saveButton);
-//        saveButton.setActionCommand("save");
-//        saveButton.addActionListener(this);
-//    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -246,17 +238,6 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
                     frame.setVisible(false);
                 }
             }
-//        } else if (e.getActionCommand() == "save") {
-//            try {
-//                jsonAccountWriter.open();
-//                jsonAccountWriter.write(accountList);
-//                jsonAccountWriter.close();
-//
-//                System.out.println("Saved " + accountList.getName() + " to " + JSON_STORE_ACCOUNT);
-//
-//            } catch (FileNotFoundException e) {
-//                System.out.println("Unable to write to file: " + JSON_STORE_ACCOUNT);
-//            }
         }
     }
 

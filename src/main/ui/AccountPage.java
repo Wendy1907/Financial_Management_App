@@ -41,12 +41,6 @@ public class AccountPage extends JFrame {
         getContentPane().setBackground(new Color(247, 202, 202));
     }
 
-//    private void printLog(EventLog events) {
-//        for (Event next : events) {
-//            System.out.println(next.getDescription());
-//        }
-//    }
-
     public void loadTabs() {
         mainTab = new MainTab(this);
         spendingTab = new SpendingTab(this);

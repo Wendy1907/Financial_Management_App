@@ -1,17 +1,30 @@
 package ui;
 
 import model.AccountList;
+import persistence.JsonAccountReader;
+import persistence.JsonAccountWriter;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
-public class Home extends Frame {
-    private static HomeActionListener homeActionListener;
+public class Home extends Frame implements ActionListener {
+//    private static HomeActionListener homeActionListener;
+
+    private static final String JSON_STORE_ACCOUNT = "./data/User.json";
+    private JsonAccountWriter jsonAccountWriter;
+    private JsonAccountReader jsonAccountReader;
     private AccountList accountList = new AccountList("Wendy's Account List");
 
     public Home() {
-        homeActionListener = new HomeActionListener(this);
+//        homeActionListener = new HomeActionListener(this);
+
+        jsonAccountWriter = new JsonAccountWriter(JSON_STORE_ACCOUNT);
+        jsonAccountReader = new JsonAccountReader(JSON_STORE_ACCOUNT);
 
         Frame frame = new Frame("Financial Tracker");
 
@@ -58,11 +71,15 @@ public class Home extends Frame {
         panelForButtons.add(load);
 
 
-        accountList.setActionCommand("account");
+        accountList.setActionCommand("accounts");
         load.setActionCommand("load");
         save.setActionCommand("save");
 
-        setActionCommand(accountList, load, save);
+        accountList.addActionListener(this);
+        load.addActionListener(this);
+        save.addActionListener(this);
+
+//        setActionCommand(accountList, load, save);
 
 
         panelForButtons.setLayout(new FlowLayout());
@@ -79,11 +96,11 @@ public class Home extends Frame {
         });
     }
 
-    private static void setActionCommand(Button accountList, Button load, Button save) {
-        accountList.addActionListener(homeActionListener);
-        save.addActionListener(homeActionListener);
-        load.addActionListener(homeActionListener);
-    }
+//    private static void setActionCommand(Button accountList, Button load, Button save) {
+//        accountList.addActionListener(homeActionListener);
+//        save.addActionListener(homeActionListener);
+//        load.addActionListener(homeActionListener);
+//    }
 
 
     public void setAccountList(AccountList accountList) {
@@ -92,5 +109,38 @@ public class Home extends Frame {
 
     public AccountList getAccountList() {
         return accountList;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("accounts")) {
+            new AccountListPage(accountList);
+        } else if (e.getActionCommand().equals("save")) {
+            saveData();
+        } else {
+            loadData();
+        }
+    }
+
+    //EFFECTS: save the data to file
+    private void saveData() {
+        try {
+            jsonAccountWriter.open();
+            jsonAccountWriter.write(accountList);
+            jsonAccountWriter.close();
+            System.out.println("Save current data to " + JSON_STORE_ACCOUNT);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file " + JSON_STORE_ACCOUNT);
+        }
+    }
+
+    private void loadData() {
+        try {
+            AccountList accountListSet = jsonAccountReader.read();
+            setAccountList(accountListSet);
+            System.out.println("Load data from " + JSON_STORE_ACCOUNT);
+        } catch (IOException e) {
+            System.out.println("Unable to load file from " + JSON_STORE_ACCOUNT);
+        }
     }
 }

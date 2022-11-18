@@ -3,14 +3,24 @@
     "accounts": [
         {
             "earningList": [{
-                "amount": 150,
-                "name": "Deposit Salary",
+                "amount": 1000,
+                "name": "Salary",
                 "categories": "Salary"
             }],
             "spendingList": [
                 {
-                    "amount": 20,
-                    "name": "Sushi",
+                    "amount": 12,
+                    "name": "Sushi ",
+                    "categories": "Dinning"
+                },
+                {
+                    "amount": 75,
+                    "name": "MSP",
+                    "categories": "Health"
+                },
+                {
+                    "amount": 15,
+                    "name": "Poke",
                     "categories": "Dinning"
                 },
                 {
@@ -19,16 +29,25 @@
                     "categories": "Others"
                 }
             ],
-            "nameAccount": "TD"
+            "nameAccount": "a"
+        },
+        {
+            "earningList": [],
+            "spendingList": [{
+                "amount": 50,
+                "name": "Bus Fare",
+                "categories": "Travel"
+            }],
+            "nameAccount": "b"
         },
         {
             "earningList": [{
-                "amount": 2000,
-                "name": "Salary",
-                "categories": "Salary"
+                "amount": 500,
+                "name": "Interest",
+                "categories": "Interest"
             }],
             "spendingList": [],
-            "nameAccount": "RBC"
+            "nameAccount": "c"
         }
     ]
 }

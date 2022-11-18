@@ -14,9 +14,8 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * This is the code for the Spending Tab of the Account Page
+ * This is the code for Spending Tab in the Account Page
  */
-
 
 public class SpendingTab extends Tab implements ListSelectionListener {
     private JPanel topPanel;
@@ -96,9 +95,9 @@ public class SpendingTab extends Tab implements ListSelectionListener {
                 SpendingCategories type = controller.account.convertToSpendingCategory(category);
                 Spending spending = new Spending(description, amount, type);
                 controller.account.addSpending(spending);
+                listModel.addElement(spendingDescription.getText() + " : " + spendingAmountItem.getText());
+                deleteButton.setEnabled(true);
             }
-            listModel.addElement(spendingDescription.getText() + " : " + spendingAmountItem.getText());
-            deleteButton.setEnabled(true);
         }
     }
 

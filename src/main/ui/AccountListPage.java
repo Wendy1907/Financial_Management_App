@@ -14,9 +14,8 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * This is the code fpr the Account List Page
+ * This is the code for Account List Page
  */
-
 
 public class AccountListPage extends JFrame implements ListSelectionListener, ActionListener {
     private static final String JSON_STORE_ACCOUNT = "./data/User.json";
@@ -109,9 +108,9 @@ public class AccountListPage extends JFrame implements ListSelectionListener, Ac
                 String name = accountName.getText();
                 Account newAccount = new Account(name);
                 accountList.addAccount(newAccount);
+                listModel.addElement(accountName.getText());
+                deleteButton.setEnabled(true);
             }
-            listModel.addElement(accountName.getText());
-            deleteButton.setEnabled(true);
         }
     }
 

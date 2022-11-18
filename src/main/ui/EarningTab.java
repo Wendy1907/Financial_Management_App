@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * This is the code for the Earning Tab of the Account Page
+ * This is the code for Earning Tab in the Account Page
  */
 
 public class EarningTab extends Tab implements ListSelectionListener {
@@ -95,9 +95,9 @@ public class EarningTab extends Tab implements ListSelectionListener {
                 EarningCategories type = controller.account.convertToEarningCategory(category);
                 Earning earning = new Earning(description, amount, type);
                 controller.account.addEarning(earning);
+                listModel.addElement(earningDescription.getText() + " : " + earningAmountItem.getText());
+                deleteButton.setEnabled(true);
             }
-            listModel.addElement(earningDescription.getText() + " : " + earningAmountItem.getText());
-            deleteButton.setEnabled(true);
         }
     }
 

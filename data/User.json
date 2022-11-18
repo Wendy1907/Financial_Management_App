@@ -2,11 +2,18 @@
     "nameAccountList": "Wendy's Account List",
     "accounts": [
         {
-            "earningList": [{
-                "amount": 350,
-                "name": "Salary",
-                "categories": "Salary"
-            }],
+            "earningList": [
+                {
+                    "amount": 350,
+                    "name": "Salary",
+                    "categories": "Salary"
+                },
+                {
+                    "amount": 500,
+                    "name": "Salary",
+                    "categories": "Salary"
+                }
+            ],
             "spendingList": [
                 {
                     "amount": 50,

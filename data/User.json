@@ -3,51 +3,41 @@
     "accounts": [
         {
             "earningList": [{
-                "amount": 1000,
+                "amount": 350,
                 "name": "Salary",
                 "categories": "Salary"
             }],
             "spendingList": [
                 {
-                    "amount": 12,
-                    "name": "Sushi ",
+                    "amount": 50,
+                    "name": "Food",
+                    "categories": "Groceries"
+                },
+                {
+                    "amount": 20,
+                    "name": "Sushi",
                     "categories": "Dinning"
-                },
-                {
-                    "amount": 75,
-                    "name": "MSP",
-                    "categories": "Health"
-                },
-                {
-                    "amount": 15,
-                    "name": "Poke",
-                    "categories": "Dinning"
-                },
-                {
-                    "amount": 40,
-                    "name": "Keyboard",
-                    "categories": "Others"
                 }
             ],
-            "nameAccount": "a"
-        },
-        {
-            "earningList": [],
-            "spendingList": [{
-                "amount": 50,
-                "name": "Bus Fare",
-                "categories": "Travel"
-            }],
-            "nameAccount": "b"
+            "nameAccount": "A"
         },
         {
             "earningList": [{
                 "amount": 500,
-                "name": "Interest",
-                "categories": "Interest"
+                "name": "Salary",
+                "categories": "Salary"
             }],
             "spendingList": [],
-            "nameAccount": "c"
+            "nameAccount": "B"
+        },
+        {
+            "earningList": [],
+            "spendingList": [{
+                "amount": 15,
+                "name": "Poke",
+                "categories": "Dinning"
+            }],
+            "nameAccount": "C"
         }
     ]
 }

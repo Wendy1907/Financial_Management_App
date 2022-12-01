@@ -2,49 +2,43 @@
     "nameAccountList": "Wendy's Account List",
     "accounts": [
         {
-            "earningList": [
-                {
-                    "amount": 350,
-                    "name": "Salary",
-                    "categories": "Salary"
-                },
-                {
-                    "amount": 500,
-                    "name": "Salary",
-                    "categories": "Salary"
-                }
-            ],
+            "earningList": [{
+                "amount": 1000,
+                "name": "Salary",
+                "categories": "Salary"
+            }],
             "spendingList": [
                 {
-                    "amount": 50,
-                    "name": "Food",
+                    "amount": 12,
+                    "name": "Sushi",
+                    "categories": "Dinning"
+                },
+                {
+                    "amount": 75,
+                    "name": "MSP",
+                    "categories": "Health"
+                },
+                {
+                    "amount": 15,
+                    "name": "Donut",
                     "categories": "Groceries"
                 },
                 {
-                    "amount": 20,
-                    "name": "Sushi",
-                    "categories": "Dinning"
+                    "amount": 40,
+                    "name": "Keyboard",
+                    "categories": "Others"
                 }
             ],
             "nameAccount": "A"
         },
         {
-            "earningList": [{
-                "amount": 500,
-                "name": "Salary",
-                "categories": "Salary"
-            }],
-            "spendingList": [],
-            "nameAccount": "B"
-        },
-        {
             "earningList": [],
             "spendingList": [{
-                "amount": 15,
-                "name": "Poke",
-                "categories": "Dinning"
+                "amount": 50,
+                "name": "Bus Fare",
+                "categories": "Travel"
             }],
-            "nameAccount": "C"
+            "nameAccount": "B"
         }
     ]
 }

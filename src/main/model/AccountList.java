@@ -39,6 +39,7 @@ public class AccountList implements Writable {
     //EFFECTS: stores the given Account into the list
     public void addAccount(Account account) {
         accountList.add(account);
+        EventLog.getInstance().logEvent(new Event("Added new Account with name " + account.getNameAccount()));
     }
 
     //REQUIRES: account != null
@@ -46,6 +47,7 @@ public class AccountList implements Writable {
     //EFFECTS: remove the given Account from the list
     public void removeAccount(Account account) {
         accountList.remove(account);
+        EventLog.getInstance().logEvent(new Event("Removed Account with name " + account.getNameAccount()));
     }
 
     //EFFECTS: get total number of Account in the list

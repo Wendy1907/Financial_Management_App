@@ -101,6 +101,8 @@ public class Account implements Writable {
     //EFFECTS: stores the given Spending into the list
     public void addSpending(Spending spending) {
         spendingList.add(spending);
+        EventLog.getInstance().logEvent(new Event("Added new Spending in account " + nameAccount
+                + " with amount of " + spending.getAmount() + " on " + spending.getName()));
     }
 
     //REQUIRES: earning != null
@@ -108,6 +110,8 @@ public class Account implements Writable {
     //EFFECTS: remove the given Spending from the list
     public void removeSpending(Spending spending) {
         spendingList.remove(spending);
+        EventLog.getInstance().logEvent(new Event("Removed Spending in account " + nameAccount
+                + " with amount of " + spending.getAmount() + " on " + spending.getName()));
     }
 
     //EFFECTS: get total amount of Spending
@@ -124,6 +128,8 @@ public class Account implements Writable {
     //EFFECTS: stores the given Earning into the list
     public void addEarning(Earning earning) {
         earningList.add(earning);
+        EventLog.getInstance().logEvent(new Event("Added new Earning in account " + nameAccount
+                + " with amount of " + earning.getAmount() + " on " + earning.getName()));
     }
 
     //REQUIRES: earning != null
@@ -131,6 +137,8 @@ public class Account implements Writable {
     //EFFECTS: remove the given Earning from the list
     public void removeEarning(Earning earning) {
         earningList.remove(earning);
+        EventLog.getInstance().logEvent(new Event("Removed Earning in account " + nameAccount
+                + " with amount of " + earning.getAmount() + " on " + earning.getName()));
     }
 
     //EFFECTS: get total amount of Earning

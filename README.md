@@ -65,3 +65,31 @@ background colors, when you go into the Account List Page, you can see that the 
 And also, in the external pages for adding Account, adding Spending, adding Earning, you can see different images in that.
 - You can save the state of Account List by clicking "Save Data" button on the Home Page(the page after the Login).
 - You can reload the state of Account List by clicking "Load Data" button on the Home Page(the page after the Login).
+
+## Phase 4: Task 2
+- Wed Nov 30 23:11:32 PST 2022. Added new Account with name A
+
+- Wed Nov 30 23:11:47 PST 2022. Added new Earning in account A with amount of 1000.0 on Salary
+
+- Wed Nov 30 23:12:23 PST 2022. Added new Spending in account A with amount of 12.0 on Sushi
+
+- Wed Nov 30 23:12:38 PST 2022. Added new Spending in account A with amount of 75.0 on MSP
+
+- Wed Nov 30 23:12:44 PST 2022. Added new Spending in account A with amount of 15.0 on Poke
+
+- Wed Nov 30 23:12:47 PST 2022. Removed Spending in account A with amount of 15.0 on Poke
+
+- Wed Nov 30 23:13:02 PST 2022. Added new Spending in account A with amount of 15.0 on Donut
+
+- Wed Nov 30 23:13:23 PST 2022. Added new Spending in account A with amount of 40.0 on Keyboard
+
+- Wed Nov 30 23:13:42 PST 2022. Added new Account with name B
+
+- Wed Nov 30 23:13:59 PST 2022. Added new Spending in account B with amount of 50.0 on Bus Fare
+
+- Wed Nov 30 23:14:11 PST 2022. Added new Account with name C
+
+- Wed Nov 30 23:14:27 PST 2022. Added new Earning in account C with amount of 500.0 on Interest
+
+- Wed Nov 30 23:14:34 PST 2022. Removed Account with name C
+

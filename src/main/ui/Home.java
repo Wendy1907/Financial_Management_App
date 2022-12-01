@@ -1,6 +1,8 @@
 package ui;
 
 import model.AccountList;
+import model.Event;
+import model.EventLog;
 import persistence.JsonAccountReader;
 import persistence.JsonAccountWriter;
 
@@ -89,16 +91,6 @@ public class Home extends Frame implements ActionListener {
         panelForButtons.setLayout(new FlowLayout());
     }
 
-    // MODIFIES: this
-    // EFFECTS: Close the window
-    private static void windowClose(Frame frame) {
-        frame.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-    }
 
 
 
@@ -144,5 +136,24 @@ public class Home extends Frame implements ActionListener {
         } catch (IOException e) {
             System.out.println("Unable to load file from " + JSON_STORE_ACCOUNT);
         }
+    }
+
+
+    public void printLog() {
+        for (Event next : EventLog.getInstance()) {
+            System.out.println(next.getDate() + "\n" + next.getDescription() + "\n");
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: Close the window
+    private void windowClose(Frame frame) {
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                printLog();
+                System.exit(0);
+            }
+        });
     }
 }

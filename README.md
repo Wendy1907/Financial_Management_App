@@ -93,3 +93,9 @@ And also, in the external pages for adding Account, adding Spending, adding Earn
 
 - Wed Nov 30 23:14:34 PST 2022. Removed Account with name C
 
+## Phase 4: Task 3
+If I have more time on this project, I would improve the part of calculating the total value of Spending and Earning on 
+each Account and also in all Account. Instead of having to close the AccountList Page and reopen again to show up the 
+calculated value, I would improve it to show immediately right after I add/ remove a new Spending/ Earning. Furthermore,
+I want to improve that after done in adding/ removing Spending/ Earning, when we close the Account Page, we can go back 
+to the AccountList Page instead of going to the Page Home and having to open the AccountList Page once again.

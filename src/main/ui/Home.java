@@ -138,7 +138,8 @@ public class Home extends Frame implements ActionListener {
         }
     }
 
-
+    // MODIFIES: this
+    // EFFECTS: print out the EventLog
     public void printLog() {
         for (Event next : EventLog.getInstance()) {
             System.out.println(next.getDate() + "\n" + next.getDescription() + "\n");

@@ -197,6 +197,7 @@ public class Account implements Writable {
         }
     }
 
+    // EFFECTS: Convert the Spending Categories from String to SpendingCategories
     public SpendingCategories convertToSpendingCategory(String s) {
         switch (s) {
             case "Dinning":
@@ -214,6 +215,7 @@ public class Account implements Writable {
         }
     }
 
+    // EFFECTS: Convert the Earning Categories from String to EarningCategories
     public EarningCategories convertToEarningCategory(String s) {
         switch (s) {
             case "Salary":

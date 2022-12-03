@@ -63,6 +63,7 @@ public class AccountPage extends JFrame {
         topBar.setTitleAt(EARNING_TAB_INDEX, "Earning");
     }
 
+    // EFFECTS: load the Spending Tab
     public void loadNewSpending() {
         if (spendingTab != null) {
             topBar.remove(spendingTab);
@@ -72,6 +73,7 @@ public class AccountPage extends JFrame {
         topBar.setTitleAt(SPENDING_TAB_INDEX, "Spending");
     }
 
+    // EFFECTS: load the Earning Tab
     public void loadNewEarning() {
         if (earningTab != null) {
             topBar.remove(earningTab);
